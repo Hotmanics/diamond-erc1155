@@ -11,12 +11,15 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const { deployer } = await hre.getNamedAccounts();
   const { diamond } = hre.deployments;
 
-  await diamond.deploy("DiamondExample", {
+  await diamond.deploy("ERC1155Example", {
     from: deployer,
     autoMine: true,
     log: true,
     waitConfirmations: 1,
-    facets: ["DiamondInit", "SimpleStorageFacet"],
+    facets: ["DiamondInit", "CustomERC1155"],
+    excludeSelectors: {
+      CustomERC1155: ["supportsInterface"],
+    },
     execute: {
       contract: "DiamondInit",
       methodName: "init",
@@ -27,4 +30,4 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
 
 export default deployYourContract;
 
-deployYourContract.tags = ["DiamondExample"];
+deployYourContract.tags = ["ERC1155Example"];

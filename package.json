@@ -9,7 +9,7 @@
     ]
   },
   "scripts": {
-    "full": "yarn chain & yarn deploy && yarn start",
+    "full": "yarn chain && yarn deploy && yarn start",
     "account": "yarn workspace @se-2/hardhat account",
     "chain": "yarn workspace @se-2/hardhat chain",
     "fork": "yarn workspace @se-2/hardhat fork",

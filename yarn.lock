@@ -1788,6 +1788,7 @@ __metadata:
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13"
     "@nomiclabs/hardhat-etherscan": ^3.1.0
     "@openzeppelin/contracts": ^4.8.1
+    "@solidstate/contracts": ^0.0.58
     "@typechain/ethers-v5": ^10.1.0
     "@typechain/hardhat": ^6.1.3
     "@types/eslint": ^8
@@ -1804,7 +1805,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     ethers: ^5.7.1
     hardhat: ^2.11.2
-    hardhat-deploy: ^0.11.26
+    hardhat-deploy: ^0.11.32
     hardhat-gas-reporter: ^1.0.9
     prettier: ^2.8.4
     qrcode: ^1.5.1
@@ -1979,6 +1980,13 @@ __metadata:
   dependencies:
     antlr4ts: ^0.5.0-alpha.4
   checksum: 9a27eb961c22a3b8732bd9782ce3b7912e67b2e2183acada552116dd0bbe637c33265177ab3db9610063da48aa57299d67afdeb0616450b631a0e3da865c4e88
+  languageName: node
+  linkType: hard
+
+"@solidstate/contracts@npm:^0.0.58":
+  version: 0.0.58
+  resolution: "@solidstate/contracts@npm:0.0.58"
+  checksum: f52097b155b1ac2c115834c4fbc314af42729fc8564c927a29fcc476485799d3b6f28411292acff41de5d96ca8e9ffd71ef0ad6e6dcefe50c531b65c11e0eb28
   languageName: node
   linkType: hard
 
@@ -7911,9 +7919,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hardhat-deploy@npm:^0.11.26":
-  version: 0.11.31
-  resolution: "hardhat-deploy@npm:0.11.31"
+"hardhat-deploy@npm:^0.11.32":
+  version: 0.11.37
+  resolution: "hardhat-deploy@npm:0.11.37"
   dependencies:
     "@ethersproject/abi": ^5.7.0
     "@ethersproject/abstract-signer": ^5.7.0
@@ -7939,7 +7947,7 @@ __metadata:
     murmur-128: ^0.2.1
     qs: ^6.9.4
     zksync-web3: ^0.14.3
-  checksum: 75ea28d6fe745c2b685f7b2d17b280967adb37ff1ea7daf651182ae593aeb133273c9815c089b24b31607ba216baeee0c9fb761245dfa8b4186627349fdd1522
+  checksum: c338289849f26530296be648c7bfc2d4673d0786855ed256ee9cc864f40b94125cfa36808bedfbae4f2bad7adc38def7547bbeb3b84cbfb0aeabae04de5238fd
   languageName: node
   linkType: hard
 

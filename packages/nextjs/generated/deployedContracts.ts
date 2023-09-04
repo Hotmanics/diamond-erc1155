@@ -4,181 +4,73 @@ const contracts = {
       chainId: "31337",
       name: "localhost",
       contracts: {
-        DiamondExample: {
-          address: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
+        CustomERC1155: {
+          address: "0xEa895E3971eA4A9d14e30ef8263B088D441C5a25",
           abi: [
             {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "_contractOwner",
-                  type: "address",
-                },
-                {
-                  components: [
-                    {
-                      internalType: "address",
-                      name: "facetAddress",
-                      type: "address",
-                    },
-                    {
-                      internalType: "enum IDiamondCut.FacetCutAction",
-                      name: "action",
-                      type: "uint8",
-                    },
-                    {
-                      internalType: "bytes4[]",
-                      name: "functionSelectors",
-                      type: "bytes4[]",
-                    },
-                  ],
-                  internalType: "struct IDiamondCut.FacetCut[]",
-                  name: "_diamondCut",
-                  type: "tuple[]",
-                },
-                {
-                  components: [
-                    {
-                      internalType: "address",
-                      name: "initContract",
-                      type: "address",
-                    },
-                    {
-                      internalType: "bytes",
-                      name: "initData",
-                      type: "bytes",
-                    },
-                  ],
-                  internalType: "struct Diamond.Initialization[]",
-                  name: "_initializations",
-                  type: "tuple[]",
-                },
-              ],
-              stateMutability: "payable",
-              type: "constructor",
-            },
-            {
-              stateMutability: "payable",
-              type: "fallback",
-            },
-            {
-              stateMutability: "payable",
-              type: "receive",
+              inputs: [],
+              name: "ERC1155Base__ArrayLengthMismatch",
+              type: "error",
             },
             {
               inputs: [],
-              name: "init",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
+              name: "ERC1155Base__BalanceQueryZeroAddress",
+              type: "error",
             },
             {
               inputs: [],
-              name: "getGreeting",
-              outputs: [
-                {
-                  internalType: "string",
-                  name: "",
-                  type: "string",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
+              name: "ERC1155Base__BurnExceedsBalance",
+              type: "error",
             },
             {
-              inputs: [
-                {
-                  internalType: "string",
-                  name: "_newGreeting",
-                  type: "string",
-                },
-              ],
-              name: "setGreeting",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
+              inputs: [],
+              name: "ERC1155Base__BurnFromZeroAddress",
+              type: "error",
             },
             {
-              anonymous: false,
-              inputs: [
-                {
-                  components: [
-                    {
-                      internalType: "address",
-                      name: "facetAddress",
-                      type: "address",
-                    },
-                    {
-                      internalType: "enum IDiamondCut.FacetCutAction",
-                      name: "action",
-                      type: "uint8",
-                    },
-                    {
-                      internalType: "bytes4[]",
-                      name: "functionSelectors",
-                      type: "bytes4[]",
-                    },
-                  ],
-                  indexed: false,
-                  internalType: "struct IDiamondCut.FacetCut[]",
-                  name: "_diamondCut",
-                  type: "tuple[]",
-                },
-                {
-                  indexed: false,
-                  internalType: "address",
-                  name: "_init",
-                  type: "address",
-                },
-                {
-                  indexed: false,
-                  internalType: "bytes",
-                  name: "_calldata",
-                  type: "bytes",
-                },
-              ],
-              name: "DiamondCut",
-              type: "event",
+              inputs: [],
+              name: "ERC1155Base__ERC1155ReceiverNotImplemented",
+              type: "error",
             },
             {
-              inputs: [
-                {
-                  components: [
-                    {
-                      internalType: "address",
-                      name: "facetAddress",
-                      type: "address",
-                    },
-                    {
-                      internalType: "enum IDiamondCut.FacetCutAction",
-                      name: "action",
-                      type: "uint8",
-                    },
-                    {
-                      internalType: "bytes4[]",
-                      name: "functionSelectors",
-                      type: "bytes4[]",
-                    },
-                  ],
-                  internalType: "struct IDiamondCut.FacetCut[]",
-                  name: "_diamondCut",
-                  type: "tuple[]",
-                },
-                {
-                  internalType: "address",
-                  name: "_init",
-                  type: "address",
-                },
-                {
-                  internalType: "bytes",
-                  name: "_calldata",
-                  type: "bytes",
-                },
-              ],
-              name: "diamondCut",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
+              inputs: [],
+              name: "ERC1155Base__ERC1155ReceiverRejected",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__MintToZeroAddress",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__NotOwnerOrApproved",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__SelfApproval",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__TransferExceedsBalance",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__TransferToZeroAddress",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC165Base__InvalidInterfaceId",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "EnumerableSet__IndexOutOfBounds",
+              type: "error",
             },
             {
               anonymous: false,
@@ -186,71 +78,131 @@ const contracts = {
                 {
                   indexed: true,
                   internalType: "address",
-                  name: "previousOwner",
+                  name: "account",
                   type: "address",
                 },
                 {
                   indexed: true,
                   internalType: "address",
-                  name: "newOwner",
+                  name: "operator",
                   type: "address",
                 },
+                {
+                  indexed: false,
+                  internalType: "bool",
+                  name: "approved",
+                  type: "bool",
+                },
               ],
-              name: "OwnershipTransferred",
+              name: "ApprovalForAll",
               type: "event",
             },
             {
-              inputs: [],
-              name: "owner",
-              outputs: [
+              anonymous: false,
+              inputs: [
                 {
+                  indexed: true,
                   internalType: "address",
-                  name: "owner_",
+                  name: "operator",
                   type: "address",
                 },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256[]",
+                  name: "ids",
+                  type: "uint256[]",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256[]",
+                  name: "values",
+                  type: "uint256[]",
+                },
               ],
-              stateMutability: "view",
-              type: "function",
+              name: "TransferBatch",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "value",
+                  type: "uint256",
+                },
+              ],
+              name: "TransferSingle",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: false,
+                  internalType: "string",
+                  name: "value",
+                  type: "string",
+                },
+                {
+                  indexed: true,
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "URI",
+              type: "event",
             },
             {
               inputs: [
                 {
-                  internalType: "address",
-                  name: "_newOwner",
-                  type: "address",
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
                 },
               ],
-              name: "transferOwnership",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "bytes4",
-                  name: "_functionSelector",
-                  type: "bytes4",
-                },
-              ],
-              name: "facetAddress",
-              outputs: [
-                {
-                  internalType: "address",
-                  name: "facetAddress_",
-                  type: "address",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "facetAddresses",
+              name: "accountsByToken",
               outputs: [
                 {
                   internalType: "address[]",
-                  name: "facetAddresses_",
+                  name: "",
                   type: "address[]",
                 },
               ],
@@ -261,41 +213,21 @@ const contracts = {
               inputs: [
                 {
                   internalType: "address",
-                  name: "_facet",
+                  name: "account",
                   type: "address",
                 },
-              ],
-              name: "facetFunctionSelectors",
-              outputs: [
                 {
-                  internalType: "bytes4[]",
-                  name: "facetFunctionSelectors_",
-                  type: "bytes4[]",
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
                 },
               ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "facets",
+              name: "balanceOf",
               outputs: [
                 {
-                  components: [
-                    {
-                      internalType: "address",
-                      name: "facetAddress",
-                      type: "address",
-                    },
-                    {
-                      internalType: "bytes4[]",
-                      name: "functionSelectors",
-                      type: "bytes4[]",
-                    },
-                  ],
-                  internalType: "struct IDiamondLoupe.Facet[]",
-                  name: "facets_",
-                  type: "tuple[]",
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
                 },
               ],
               stateMutability: "view",
@@ -304,8 +236,147 @@ const contracts = {
             {
               inputs: [
                 {
+                  internalType: "address[]",
+                  name: "accounts",
+                  type: "address[]",
+                },
+                {
+                  internalType: "uint256[]",
+                  name: "ids",
+                  type: "uint256[]",
+                },
+              ],
+              name: "balanceOfBatch",
+              outputs: [
+                {
+                  internalType: "uint256[]",
+                  name: "",
+                  type: "uint256[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+              ],
+              name: "isApprovedForAll",
+              outputs: [
+                {
+                  internalType: "bool",
+                  name: "",
+                  type: "bool",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "mint",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256[]",
+                  name: "ids",
+                  type: "uint256[]",
+                },
+                {
+                  internalType: "uint256[]",
+                  name: "amounts",
+                  type: "uint256[]",
+                },
+                {
+                  internalType: "bytes",
+                  name: "data",
+                  type: "bytes",
+                },
+              ],
+              name: "safeBatchTransferFrom",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "amount",
+                  type: "uint256",
+                },
+                {
+                  internalType: "bytes",
+                  name: "data",
+                  type: "bytes",
+                },
+              ],
+              name: "safeTransferFrom",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
+                  internalType: "bool",
+                  name: "status",
+                  type: "bool",
+                },
+              ],
+              name: "setApprovalForAll",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
                   internalType: "bytes4",
-                  name: "_interfaceId",
+                  name: "interfaceId",
                   type: "bytes4",
                 },
               ],
@@ -320,319 +391,77 @@ const contracts = {
               stateMutability: "view",
               type: "function",
             },
-          ],
-        },
-        DiamondExample_DiamondProxy: {
-          address: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
-          abi: [
             {
               inputs: [
                 {
                   internalType: "address",
-                  name: "_contractOwner",
+                  name: "account",
                   type: "address",
                 },
+              ],
+              name: "tokensByAccount",
+              outputs: [
                 {
-                  components: [
-                    {
-                      internalType: "address",
-                      name: "facetAddress",
-                      type: "address",
-                    },
-                    {
-                      internalType: "enum IDiamondCut.FacetCutAction",
-                      name: "action",
-                      type: "uint8",
-                    },
-                    {
-                      internalType: "bytes4[]",
-                      name: "functionSelectors",
-                      type: "bytes4[]",
-                    },
-                  ],
-                  internalType: "struct IDiamondCut.FacetCut[]",
-                  name: "_diamondCut",
-                  type: "tuple[]",
-                },
-                {
-                  components: [
-                    {
-                      internalType: "address",
-                      name: "initContract",
-                      type: "address",
-                    },
-                    {
-                      internalType: "bytes",
-                      name: "initData",
-                      type: "bytes",
-                    },
-                  ],
-                  internalType: "struct Diamond.Initialization[]",
-                  name: "_initializations",
-                  type: "tuple[]",
+                  internalType: "uint256[]",
+                  name: "",
+                  type: "uint256[]",
                 },
               ],
-              stateMutability: "payable",
-              type: "constructor",
-            },
-            {
-              stateMutability: "payable",
-              type: "fallback",
-            },
-            {
-              stateMutability: "payable",
-              type: "receive",
-            },
-            {
-              inputs: [],
-              name: "init",
-              outputs: [],
-              stateMutability: "nonpayable",
+              stateMutability: "view",
               type: "function",
             },
             {
-              inputs: [],
-              name: "getGreeting",
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "totalHolders",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "totalSupply",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "uri",
               outputs: [
                 {
                   internalType: "string",
                   name: "",
                   type: "string",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "string",
-                  name: "_newGreeting",
-                  type: "string",
-                },
-              ],
-              name: "setGreeting",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
-            },
-            {
-              anonymous: false,
-              inputs: [
-                {
-                  components: [
-                    {
-                      internalType: "address",
-                      name: "facetAddress",
-                      type: "address",
-                    },
-                    {
-                      internalType: "enum IDiamondCut.FacetCutAction",
-                      name: "action",
-                      type: "uint8",
-                    },
-                    {
-                      internalType: "bytes4[]",
-                      name: "functionSelectors",
-                      type: "bytes4[]",
-                    },
-                  ],
-                  indexed: false,
-                  internalType: "struct IDiamondCut.FacetCut[]",
-                  name: "_diamondCut",
-                  type: "tuple[]",
-                },
-                {
-                  indexed: false,
-                  internalType: "address",
-                  name: "_init",
-                  type: "address",
-                },
-                {
-                  indexed: false,
-                  internalType: "bytes",
-                  name: "_calldata",
-                  type: "bytes",
-                },
-              ],
-              name: "DiamondCut",
-              type: "event",
-            },
-            {
-              inputs: [
-                {
-                  components: [
-                    {
-                      internalType: "address",
-                      name: "facetAddress",
-                      type: "address",
-                    },
-                    {
-                      internalType: "enum IDiamondCut.FacetCutAction",
-                      name: "action",
-                      type: "uint8",
-                    },
-                    {
-                      internalType: "bytes4[]",
-                      name: "functionSelectors",
-                      type: "bytes4[]",
-                    },
-                  ],
-                  internalType: "struct IDiamondCut.FacetCut[]",
-                  name: "_diamondCut",
-                  type: "tuple[]",
-                },
-                {
-                  internalType: "address",
-                  name: "_init",
-                  type: "address",
-                },
-                {
-                  internalType: "bytes",
-                  name: "_calldata",
-                  type: "bytes",
-                },
-              ],
-              name: "diamondCut",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
-            },
-            {
-              anonymous: false,
-              inputs: [
-                {
-                  indexed: true,
-                  internalType: "address",
-                  name: "previousOwner",
-                  type: "address",
-                },
-                {
-                  indexed: true,
-                  internalType: "address",
-                  name: "newOwner",
-                  type: "address",
-                },
-              ],
-              name: "OwnershipTransferred",
-              type: "event",
-            },
-            {
-              inputs: [],
-              name: "owner",
-              outputs: [
-                {
-                  internalType: "address",
-                  name: "owner_",
-                  type: "address",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "_newOwner",
-                  type: "address",
-                },
-              ],
-              name: "transferOwnership",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "bytes4",
-                  name: "_functionSelector",
-                  type: "bytes4",
-                },
-              ],
-              name: "facetAddress",
-              outputs: [
-                {
-                  internalType: "address",
-                  name: "facetAddress_",
-                  type: "address",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "facetAddresses",
-              outputs: [
-                {
-                  internalType: "address[]",
-                  name: "facetAddresses_",
-                  type: "address[]",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "_facet",
-                  type: "address",
-                },
-              ],
-              name: "facetFunctionSelectors",
-              outputs: [
-                {
-                  internalType: "bytes4[]",
-                  name: "facetFunctionSelectors_",
-                  type: "bytes4[]",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "facets",
-              outputs: [
-                {
-                  components: [
-                    {
-                      internalType: "address",
-                      name: "facetAddress",
-                      type: "address",
-                    },
-                    {
-                      internalType: "bytes4[]",
-                      name: "functionSelectors",
-                      type: "bytes4[]",
-                    },
-                  ],
-                  internalType: "struct IDiamondLoupe.Facet[]",
-                  name: "facets_",
-                  type: "tuple[]",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "bytes4",
-                  name: "_interfaceId",
-                  type: "bytes4",
-                },
-              ],
-              name: "supportsInterface",
-              outputs: [
-                {
-                  internalType: "bool",
-                  name: "",
-                  type: "bool",
                 },
               ],
               stateMutability: "view",
@@ -641,7 +470,7 @@ const contracts = {
           ],
         },
         DiamondInit: {
-          address: "0x76f74d88Ff3d1446eE30Dda8419a993B3aFDABC3",
+          address: "0xF6C6D002a74854904548768398D1168482d650d1",
           abi: [
             {
               inputs: [],
@@ -652,12 +481,505 @@ const contracts = {
             },
           ],
         },
-        SimpleStorageFacet: {
-          address: "0xf94FA2b7ccEb111858408f8dfa21F825F59F8eb3",
+        ERC1155Example: {
+          address: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
           abi: [
             {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "_contractOwner",
+                  type: "address",
+                },
+                {
+                  components: [
+                    {
+                      internalType: "address",
+                      name: "facetAddress",
+                      type: "address",
+                    },
+                    {
+                      internalType: "enum IDiamondCut.FacetCutAction",
+                      name: "action",
+                      type: "uint8",
+                    },
+                    {
+                      internalType: "bytes4[]",
+                      name: "functionSelectors",
+                      type: "bytes4[]",
+                    },
+                  ],
+                  internalType: "struct IDiamondCut.FacetCut[]",
+                  name: "_diamondCut",
+                  type: "tuple[]",
+                },
+                {
+                  components: [
+                    {
+                      internalType: "address",
+                      name: "initContract",
+                      type: "address",
+                    },
+                    {
+                      internalType: "bytes",
+                      name: "initData",
+                      type: "bytes",
+                    },
+                  ],
+                  internalType: "struct Diamond.Initialization[]",
+                  name: "_initializations",
+                  type: "tuple[]",
+                },
+              ],
+              stateMutability: "payable",
+              type: "constructor",
+            },
+            {
+              stateMutability: "payable",
+              type: "fallback",
+            },
+            {
+              stateMutability: "payable",
+              type: "receive",
+            },
+            {
               inputs: [],
-              name: "getGreeting",
+              name: "init",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__ArrayLengthMismatch",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__BalanceQueryZeroAddress",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__BurnExceedsBalance",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__BurnFromZeroAddress",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__ERC1155ReceiverNotImplemented",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__ERC1155ReceiverRejected",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__MintToZeroAddress",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__NotOwnerOrApproved",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__SelfApproval",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__TransferExceedsBalance",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__TransferToZeroAddress",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC165Base__InvalidInterfaceId",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "EnumerableSet__IndexOutOfBounds",
+              type: "error",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "bool",
+                  name: "approved",
+                  type: "bool",
+                },
+              ],
+              name: "ApprovalForAll",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256[]",
+                  name: "ids",
+                  type: "uint256[]",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256[]",
+                  name: "values",
+                  type: "uint256[]",
+                },
+              ],
+              name: "TransferBatch",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "value",
+                  type: "uint256",
+                },
+              ],
+              name: "TransferSingle",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: false,
+                  internalType: "string",
+                  name: "value",
+                  type: "string",
+                },
+                {
+                  indexed: true,
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "URI",
+              type: "event",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "accountsByToken",
+              outputs: [
+                {
+                  internalType: "address[]",
+                  name: "",
+                  type: "address[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "balanceOf",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address[]",
+                  name: "accounts",
+                  type: "address[]",
+                },
+                {
+                  internalType: "uint256[]",
+                  name: "ids",
+                  type: "uint256[]",
+                },
+              ],
+              name: "balanceOfBatch",
+              outputs: [
+                {
+                  internalType: "uint256[]",
+                  name: "",
+                  type: "uint256[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+              ],
+              name: "isApprovedForAll",
+              outputs: [
+                {
+                  internalType: "bool",
+                  name: "",
+                  type: "bool",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "mint",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256[]",
+                  name: "ids",
+                  type: "uint256[]",
+                },
+                {
+                  internalType: "uint256[]",
+                  name: "amounts",
+                  type: "uint256[]",
+                },
+                {
+                  internalType: "bytes",
+                  name: "data",
+                  type: "bytes",
+                },
+              ],
+              name: "safeBatchTransferFrom",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "amount",
+                  type: "uint256",
+                },
+                {
+                  internalType: "bytes",
+                  name: "data",
+                  type: "bytes",
+                },
+              ],
+              name: "safeTransferFrom",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
+                  internalType: "bool",
+                  name: "status",
+                  type: "bool",
+                },
+              ],
+              name: "setApprovalForAll",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+              ],
+              name: "tokensByAccount",
+              outputs: [
+                {
+                  internalType: "uint256[]",
+                  name: "",
+                  type: "uint256[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "totalHolders",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "totalSupply",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "uri",
               outputs: [
                 {
                   internalType: "string",
@@ -669,16 +991,958 @@ const contracts = {
               type: "function",
             },
             {
+              anonymous: false,
               inputs: [
                 {
+                  components: [
+                    {
+                      internalType: "address",
+                      name: "facetAddress",
+                      type: "address",
+                    },
+                    {
+                      internalType: "enum IDiamondCut.FacetCutAction",
+                      name: "action",
+                      type: "uint8",
+                    },
+                    {
+                      internalType: "bytes4[]",
+                      name: "functionSelectors",
+                      type: "bytes4[]",
+                    },
+                  ],
+                  indexed: false,
+                  internalType: "struct IDiamondCut.FacetCut[]",
+                  name: "_diamondCut",
+                  type: "tuple[]",
+                },
+                {
+                  indexed: false,
+                  internalType: "address",
+                  name: "_init",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "bytes",
+                  name: "_calldata",
+                  type: "bytes",
+                },
+              ],
+              name: "DiamondCut",
+              type: "event",
+            },
+            {
+              inputs: [
+                {
+                  components: [
+                    {
+                      internalType: "address",
+                      name: "facetAddress",
+                      type: "address",
+                    },
+                    {
+                      internalType: "enum IDiamondCut.FacetCutAction",
+                      name: "action",
+                      type: "uint8",
+                    },
+                    {
+                      internalType: "bytes4[]",
+                      name: "functionSelectors",
+                      type: "bytes4[]",
+                    },
+                  ],
+                  internalType: "struct IDiamondCut.FacetCut[]",
+                  name: "_diamondCut",
+                  type: "tuple[]",
+                },
+                {
+                  internalType: "address",
+                  name: "_init",
+                  type: "address",
+                },
+                {
+                  internalType: "bytes",
+                  name: "_calldata",
+                  type: "bytes",
+                },
+              ],
+              name: "diamondCut",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "previousOwner",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "newOwner",
+                  type: "address",
+                },
+              ],
+              name: "OwnershipTransferred",
+              type: "event",
+            },
+            {
+              inputs: [],
+              name: "owner",
+              outputs: [
+                {
+                  internalType: "address",
+                  name: "owner_",
+                  type: "address",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "_newOwner",
+                  type: "address",
+                },
+              ],
+              name: "transferOwnership",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "bytes4",
+                  name: "_functionSelector",
+                  type: "bytes4",
+                },
+              ],
+              name: "facetAddress",
+              outputs: [
+                {
+                  internalType: "address",
+                  name: "facetAddress_",
+                  type: "address",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "facetAddresses",
+              outputs: [
+                {
+                  internalType: "address[]",
+                  name: "facetAddresses_",
+                  type: "address[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "_facet",
+                  type: "address",
+                },
+              ],
+              name: "facetFunctionSelectors",
+              outputs: [
+                {
+                  internalType: "bytes4[]",
+                  name: "facetFunctionSelectors_",
+                  type: "bytes4[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "facets",
+              outputs: [
+                {
+                  components: [
+                    {
+                      internalType: "address",
+                      name: "facetAddress",
+                      type: "address",
+                    },
+                    {
+                      internalType: "bytes4[]",
+                      name: "functionSelectors",
+                      type: "bytes4[]",
+                    },
+                  ],
+                  internalType: "struct IDiamondLoupe.Facet[]",
+                  name: "facets_",
+                  type: "tuple[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "bytes4",
+                  name: "_interfaceId",
+                  type: "bytes4",
+                },
+              ],
+              name: "supportsInterface",
+              outputs: [
+                {
+                  internalType: "bool",
+                  name: "",
+                  type: "bool",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+          ],
+        },
+        ERC1155Example_DiamondProxy: {
+          address: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
+          abi: [
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "_contractOwner",
+                  type: "address",
+                },
+                {
+                  components: [
+                    {
+                      internalType: "address",
+                      name: "facetAddress",
+                      type: "address",
+                    },
+                    {
+                      internalType: "enum IDiamondCut.FacetCutAction",
+                      name: "action",
+                      type: "uint8",
+                    },
+                    {
+                      internalType: "bytes4[]",
+                      name: "functionSelectors",
+                      type: "bytes4[]",
+                    },
+                  ],
+                  internalType: "struct IDiamondCut.FacetCut[]",
+                  name: "_diamondCut",
+                  type: "tuple[]",
+                },
+                {
+                  components: [
+                    {
+                      internalType: "address",
+                      name: "initContract",
+                      type: "address",
+                    },
+                    {
+                      internalType: "bytes",
+                      name: "initData",
+                      type: "bytes",
+                    },
+                  ],
+                  internalType: "struct Diamond.Initialization[]",
+                  name: "_initializations",
+                  type: "tuple[]",
+                },
+              ],
+              stateMutability: "payable",
+              type: "constructor",
+            },
+            {
+              stateMutability: "payable",
+              type: "fallback",
+            },
+            {
+              stateMutability: "payable",
+              type: "receive",
+            },
+            {
+              inputs: [],
+              name: "init",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__ArrayLengthMismatch",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__BalanceQueryZeroAddress",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__BurnExceedsBalance",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__BurnFromZeroAddress",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__ERC1155ReceiverNotImplemented",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__ERC1155ReceiverRejected",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__MintToZeroAddress",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__NotOwnerOrApproved",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__SelfApproval",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__TransferExceedsBalance",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC1155Base__TransferToZeroAddress",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "ERC165Base__InvalidInterfaceId",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "EnumerableSet__IndexOutOfBounds",
+              type: "error",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "bool",
+                  name: "approved",
+                  type: "bool",
+                },
+              ],
+              name: "ApprovalForAll",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256[]",
+                  name: "ids",
+                  type: "uint256[]",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256[]",
+                  name: "values",
+                  type: "uint256[]",
+                },
+              ],
+              name: "TransferBatch",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "value",
+                  type: "uint256",
+                },
+              ],
+              name: "TransferSingle",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: false,
                   internalType: "string",
-                  name: "_newGreeting",
+                  name: "value",
+                  type: "string",
+                },
+                {
+                  indexed: true,
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "URI",
+              type: "event",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "accountsByToken",
+              outputs: [
+                {
+                  internalType: "address[]",
+                  name: "",
+                  type: "address[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "balanceOf",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address[]",
+                  name: "accounts",
+                  type: "address[]",
+                },
+                {
+                  internalType: "uint256[]",
+                  name: "ids",
+                  type: "uint256[]",
+                },
+              ],
+              name: "balanceOfBatch",
+              outputs: [
+                {
+                  internalType: "uint256[]",
+                  name: "",
+                  type: "uint256[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+              ],
+              name: "isApprovedForAll",
+              outputs: [
+                {
+                  internalType: "bool",
+                  name: "",
+                  type: "bool",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "mint",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256[]",
+                  name: "ids",
+                  type: "uint256[]",
+                },
+                {
+                  internalType: "uint256[]",
+                  name: "amounts",
+                  type: "uint256[]",
+                },
+                {
+                  internalType: "bytes",
+                  name: "data",
+                  type: "bytes",
+                },
+              ],
+              name: "safeBatchTransferFrom",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "from",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "amount",
+                  type: "uint256",
+                },
+                {
+                  internalType: "bytes",
+                  name: "data",
+                  type: "bytes",
+                },
+              ],
+              name: "safeTransferFrom",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
+                  internalType: "bool",
+                  name: "status",
+                  type: "bool",
+                },
+              ],
+              name: "setApprovalForAll",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+              ],
+              name: "tokensByAccount",
+              outputs: [
+                {
+                  internalType: "uint256[]",
+                  name: "",
+                  type: "uint256[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "totalHolders",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "totalSupply",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "uri",
+              outputs: [
+                {
+                  internalType: "string",
+                  name: "",
                   type: "string",
                 },
               ],
-              name: "setGreeting",
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  components: [
+                    {
+                      internalType: "address",
+                      name: "facetAddress",
+                      type: "address",
+                    },
+                    {
+                      internalType: "enum IDiamondCut.FacetCutAction",
+                      name: "action",
+                      type: "uint8",
+                    },
+                    {
+                      internalType: "bytes4[]",
+                      name: "functionSelectors",
+                      type: "bytes4[]",
+                    },
+                  ],
+                  indexed: false,
+                  internalType: "struct IDiamondCut.FacetCut[]",
+                  name: "_diamondCut",
+                  type: "tuple[]",
+                },
+                {
+                  indexed: false,
+                  internalType: "address",
+                  name: "_init",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "bytes",
+                  name: "_calldata",
+                  type: "bytes",
+                },
+              ],
+              name: "DiamondCut",
+              type: "event",
+            },
+            {
+              inputs: [
+                {
+                  components: [
+                    {
+                      internalType: "address",
+                      name: "facetAddress",
+                      type: "address",
+                    },
+                    {
+                      internalType: "enum IDiamondCut.FacetCutAction",
+                      name: "action",
+                      type: "uint8",
+                    },
+                    {
+                      internalType: "bytes4[]",
+                      name: "functionSelectors",
+                      type: "bytes4[]",
+                    },
+                  ],
+                  internalType: "struct IDiamondCut.FacetCut[]",
+                  name: "_diamondCut",
+                  type: "tuple[]",
+                },
+                {
+                  internalType: "address",
+                  name: "_init",
+                  type: "address",
+                },
+                {
+                  internalType: "bytes",
+                  name: "_calldata",
+                  type: "bytes",
+                },
+              ],
+              name: "diamondCut",
               outputs: [],
               stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "previousOwner",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "newOwner",
+                  type: "address",
+                },
+              ],
+              name: "OwnershipTransferred",
+              type: "event",
+            },
+            {
+              inputs: [],
+              name: "owner",
+              outputs: [
+                {
+                  internalType: "address",
+                  name: "owner_",
+                  type: "address",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "_newOwner",
+                  type: "address",
+                },
+              ],
+              name: "transferOwnership",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "bytes4",
+                  name: "_functionSelector",
+                  type: "bytes4",
+                },
+              ],
+              name: "facetAddress",
+              outputs: [
+                {
+                  internalType: "address",
+                  name: "facetAddress_",
+                  type: "address",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "facetAddresses",
+              outputs: [
+                {
+                  internalType: "address[]",
+                  name: "facetAddresses_",
+                  type: "address[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "_facet",
+                  type: "address",
+                },
+              ],
+              name: "facetFunctionSelectors",
+              outputs: [
+                {
+                  internalType: "bytes4[]",
+                  name: "facetFunctionSelectors_",
+                  type: "bytes4[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "facets",
+              outputs: [
+                {
+                  components: [
+                    {
+                      internalType: "address",
+                      name: "facetAddress",
+                      type: "address",
+                    },
+                    {
+                      internalType: "bytes4[]",
+                      name: "functionSelectors",
+                      type: "bytes4[]",
+                    },
+                  ],
+                  internalType: "struct IDiamondLoupe.Facet[]",
+                  name: "facets_",
+                  type: "tuple[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "bytes4",
+                  name: "_interfaceId",
+                  type: "bytes4",
+                },
+              ],
+              name: "supportsInterface",
+              outputs: [
+                {
+                  internalType: "bool",
+                  name: "",
+                  type: "bool",
+                },
+              ],
+              stateMutability: "view",
               type: "function",
             },
           ],

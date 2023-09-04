@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import "@solidstate/contracts/token/ERC1155/SolidStateERC1155.sol";
+
 library libSimpleStorage {
     bytes32 constant SIMPLE_STORAGE_POSITION = keccak256("diamond.standard.simple.storage");
 

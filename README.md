@@ -1,3 +1,19 @@
+# Jacob Homanics
+
+## Quickstart
+
+1. install dependencies
+
+```
+yarn install
+```
+
+1. Run a local network, deploy diamonds, and view contracts on scaffold.
+```
+yarn full
+```  
+
+
 # 🏗 Scaffold-ETH 2
 
 <h4 align="center">
