@@ -1,17 +1,12 @@
-import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
+import { ethers, getNamedAccounts, getUnnamedAccounts } from "hardhat";
 import { expect } from "chai";
-import constants from "../scripts/constants";
-import { cutDiamond } from "../scripts/Diamond.cut";
+import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { CustomERC1155, IDiamondCut } from "../typechain-types";
 import { deployDiamondCutFacet, deployFacet, deployDiamond, deployDiamondInit } from "../scripts/Diamond.deploy";
-import { ethers, getNamedAccounts, getUnnamedAccounts } from "hardhat";
+import { cutDiamond } from "../scripts/Diamond.cut";
+import constants from "../scripts/constants";
 import { makeCut } from "./utils";
-
-enum FacetCutAction {
-  Add,
-  Replace,
-  Remove,
-}
+import { FacetCutAction } from "../scripts/FacetCutAction";
 
 async function setup() {
   const { owner } = await getNamedAccounts();
@@ -73,7 +68,7 @@ describe("Diamond", function () {
 
     it("should have the correct owner", async () => {
       const { owner } = await setup();
-      expect(await customERC1155.anOwner()).to.be.eq(owner);
+      expect(await customERC1155.owner()).to.be.eq(owner);
     });
 
     it("should have the correct number", async () => {
@@ -120,7 +115,7 @@ describe("Diamond", function () {
         ethers.constants.AddressZero,
       );
 
-      expect(await customERC1155.anOwner()).to.be.eq(owner);
+      expect(await customERC1155.owner()).to.be.eq(owner);
     });
   });
 });
