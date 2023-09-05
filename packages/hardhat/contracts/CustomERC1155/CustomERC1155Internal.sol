@@ -7,7 +7,7 @@ import {ERC1155Metadata} from "@solidstate/contracts/token/ERC1155/metadata/ERC1
 import {IERC1155Metadata} from "@solidstate/contracts/token/ERC1155/metadata/IERC1155Metadata.sol";
 import {CustomERC1155Storage} from "./CustomERC1155Storage.sol";
 import {ICustomERC1155BaseInternal} from "./ICustomERC1155BaseInternal.sol";
-import "./libraries/strings.sol";
+import "../libraries/strings.sol";
 
 /**
  * @title Custom ERC115 Internal

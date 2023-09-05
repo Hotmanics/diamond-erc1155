@@ -7,8 +7,8 @@ import {IDiamondCut} from "hardhat-deploy/solc_0.8/diamond/interfaces/IDiamondCu
 import {UsingDiamondOwner} from "hardhat-deploy/solc_0.8/diamond/UsingDiamondOwner.sol";
 import {IERC173} from "@solidstate/contracts/interfaces/IERC173.sol";
 import {IERC165} from "@solidstate/contracts/interfaces/IERC165.sol";
-import {CustomERC1155Storage} from "../CustomERC1155Storage.sol";
-import {CustomERC1155} from "../CustomERC1155.sol";
+import {CustomERC1155Storage} from "../CustomERC1155/CustomERC1155Storage.sol";
+import {CustomERC1155} from "../CustomERC1155/CustomERC1155.sol";
 import {Storage, WithStorage} from "./WithStorage.sol";
 
 /**

@@ -1663,7 +1663,7 @@ const contracts = {
           ],
         },
         CustomERC1155: {
-          address: "0x90cCA76b644350E023788976E071F81ad8bC5Ab3",
+          address: "0xF12337d0127Ca88D5E356309d85EeE753f82072a",
           abi: [
             {
               inputs: [],
@@ -2231,7 +2231,7 @@ const contracts = {
           ],
         },
         DiamondInit: {
-          address: "0xbeC217dfe6FfE210415E19B9Be27Fa2eF918c48f",
+          address: "0x380cFB117BeaAa0E5bA6aECE5AC9Df1Fa558F5A3",
           abi: [
             {
               inputs: [

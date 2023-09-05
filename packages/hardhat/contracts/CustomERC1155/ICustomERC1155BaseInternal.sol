@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
-import {ICustomERC1155Internal} from "./interfaces/ICustomERC1155Internal.sol";
+import {ICustomERC1155Internal} from "../interfaces/ICustomERC1155Internal.sol";
 
 /**
  * @title Interface for Custom ERC115 Internal
