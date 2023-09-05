@@ -18,7 +18,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
     waitConfirmations: 1,
     facets: ["DiamondInit", "CustomERC1155"],
     excludeSelectors: {
-      CustomERC1155: ["supportsInterface"],
+      CustomERC1155: ["supportsInterface", "owner"],
     },
     execute: {
       contract: "DiamondInit",

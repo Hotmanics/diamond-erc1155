@@ -5,7 +5,7 @@ const contracts = {
       name: "localhost",
       contracts: {
         CustomERC1155: {
-          address: "0x12Da6589081e7beF47589603577661b4af0155b7",
+          address: "0xF204c1A4FF558D26ABd4cA2B3146A06eec938585",
           abi: [
             {
               inputs: [],
@@ -286,19 +286,6 @@ const contracts = {
               type: "function",
             },
             {
-              inputs: [],
-              name: "getOwner",
-              outputs: [
-                {
-                  internalType: "address",
-                  name: "",
-                  type: "address",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
               inputs: [
                 {
                   internalType: "address",
@@ -333,6 +320,19 @@ const contracts = {
               name: "mintToken",
               outputs: [],
               stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "owner",
+              outputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+              ],
+              stateMutability: "view",
               type: "function",
             },
             {
@@ -415,19 +415,6 @@ const contracts = {
                 },
               ],
               name: "setApprovalForAll",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "addr",
-                  type: "address",
-                },
-              ],
-              name: "setOwner",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -543,7 +530,7 @@ const contracts = {
           ],
         },
         DiamondInit: {
-          address: "0x0f8015F523de719Ebe343e1fe5D31d8a8b979C6E",
+          address: "0x49e1924de6aAE894825A16f0FF1Cc0A714502940",
           abi: [
             {
               inputs: [],
@@ -555,7 +542,7 @@ const contracts = {
           ],
         },
         ERC1155Example: {
-          address: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
+          address: "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
           abi: [
             {
               inputs: [
@@ -901,19 +888,6 @@ const contracts = {
               type: "function",
             },
             {
-              inputs: [],
-              name: "getOwner",
-              outputs: [
-                {
-                  internalType: "address",
-                  name: "",
-                  type: "address",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
               inputs: [
                 {
                   internalType: "address",
@@ -1030,19 +1004,6 @@ const contracts = {
                 },
               ],
               name: "setApprovalForAll",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "addr",
-                  type: "address",
-                },
-              ],
-              name: "setOwner",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -1361,7 +1322,7 @@ const contracts = {
           ],
         },
         ERC1155Example_DiamondProxy: {
-          address: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
+          address: "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
           abi: [
             {
               inputs: [
@@ -1707,19 +1668,6 @@ const contracts = {
               type: "function",
             },
             {
-              inputs: [],
-              name: "getOwner",
-              outputs: [
-                {
-                  internalType: "address",
-                  name: "",
-                  type: "address",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
               inputs: [
                 {
                   internalType: "address",
@@ -1836,19 +1784,6 @@ const contracts = {
                 },
               ],
               name: "setApprovalForAll",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "addr",
-                  type: "address",
-                },
-              ],
-              name: "setOwner",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -2163,148 +2098,6 @@ const contracts = {
               ],
               stateMutability: "view",
               type: "function",
-            },
-          ],
-        },
-        YourContract: {
-          address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-          abi: [
-            {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "_owner",
-                  type: "address",
-                },
-              ],
-              stateMutability: "nonpayable",
-              type: "constructor",
-            },
-            {
-              anonymous: false,
-              inputs: [
-                {
-                  indexed: true,
-                  internalType: "address",
-                  name: "greetingSetter",
-                  type: "address",
-                },
-                {
-                  indexed: false,
-                  internalType: "string",
-                  name: "newGreeting",
-                  type: "string",
-                },
-                {
-                  indexed: false,
-                  internalType: "bool",
-                  name: "premium",
-                  type: "bool",
-                },
-                {
-                  indexed: false,
-                  internalType: "uint256",
-                  name: "value",
-                  type: "uint256",
-                },
-              ],
-              name: "GreetingChange",
-              type: "event",
-            },
-            {
-              inputs: [],
-              name: "greeting",
-              outputs: [
-                {
-                  internalType: "string",
-                  name: "",
-                  type: "string",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "owner",
-              outputs: [
-                {
-                  internalType: "address",
-                  name: "",
-                  type: "address",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "premium",
-              outputs: [
-                {
-                  internalType: "bool",
-                  name: "",
-                  type: "bool",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "string",
-                  name: "_newGreeting",
-                  type: "string",
-                },
-              ],
-              name: "setGreeting",
-              outputs: [],
-              stateMutability: "payable",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "totalCounter",
-              outputs: [
-                {
-                  internalType: "uint256",
-                  name: "",
-                  type: "uint256",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "",
-                  type: "address",
-                },
-              ],
-              name: "userGreetingCounter",
-              outputs: [
-                {
-                  internalType: "uint256",
-                  name: "",
-                  type: "uint256",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "withdraw",
-              outputs: [],
-              stateMutability: "nonpayable",
-              type: "function",
-            },
-            {
-              stateMutability: "payable",
-              type: "receive",
             },
           ],
         },

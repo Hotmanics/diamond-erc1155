@@ -10,9 +10,9 @@ pragma solidity ^0.8.0;
  * /*****************************************************************************
  */
 
-import {LibDiamond} from "../libraries/LibDiamond.sol";
-import {IDiamondLoupe} from "../interfaces/IDiamondLoupe.sol";
-import {IDiamondCut} from "../interfaces/IDiamondCut.sol";
+import {LibDiamond} from "hardhat-deploy/solc_0.8/diamond/libraries/LibDiamond.sol";
+import {IDiamondLoupe} from "hardhat-deploy/solc_0.8/diamond/interfaces/IDiamondLoupe.sol";
+import {IDiamondCut} from "hardhat-deploy/solc_0.8/diamond/interfaces/IDiamondCut.sol";
 import {IERC173} from "@solidstate/contracts/interfaces/IERC173.sol";
 import {IERC165} from "@solidstate/contracts/interfaces/IERC165.sol";
 import {CustomERC1155Storage} from "../CustomERC1155Storage.sol";
@@ -23,9 +23,15 @@ import {CustomERC1155} from "../CustomERC1155.sol";
 // of your diamond. Add parameters to the init function if you need to.
 
 contract DiamondInit {
+    function a() internal pure returns (CustomERC1155Storage.Layout storage) {
+        return CustomERC1155Storage.layout();
+    }
+
     // You can add parameters to this function in order to pass in
     // data to set your own state variables
     function init() external {
+        a().owner = 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266;
+
         // adding ERC165 data
         LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
         ds.supportedInterfaces[type(IERC165).interfaceId] = true;

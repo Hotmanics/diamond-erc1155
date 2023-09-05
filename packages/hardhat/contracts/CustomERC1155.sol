@@ -7,20 +7,12 @@ import {ERC1155MetadataStorage} from "@solidstate/contracts/token/ERC1155/metada
 import {ERC1155Metadata} from "@solidstate/contracts/token/ERC1155/metadata/ERC1155Metadata.sol";
 import {IERC1155Metadata} from "@solidstate/contracts/token/ERC1155/metadata/IERC1155Metadata.sol";
 import {CustomERC1155Storage} from "./CustomERC1155Storage.sol";
-import "./strings.sol";
+import "./libraries/strings.sol";
 
 /**
  * @title SolidState ERC1155 implementation
  */
 contract CustomERC1155 is SolidStateERC1155 {
-    function getOwner() public view returns (address) {
-        return CustomERC1155Storage.layout().owner;
-    }
-
-    function setOwner(address addr) external {
-        CustomERC1155Storage.layout().owner = 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266;
-    }
-
     using strings for *;
 
     error CustomERC1155_TokenDoesNotExist();
@@ -46,6 +38,10 @@ contract CustomERC1155 is SolidStateERC1155 {
 
         _mint(msg.sender, tokenId, tokenAmount, "");
         CustomERC1155Storage.layout().hasMinted[msg.sender] = true;
+    }
+
+    function owner() public view returns (address) {
+        return CustomERC1155Storage.layout().owner;
     }
 
     function totalTokenTypeCount() public view returns (uint256) {
