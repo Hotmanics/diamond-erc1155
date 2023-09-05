@@ -5,6 +5,7 @@ import "@nomicfoundation/hardhat-toolbox";
 import "hardhat-deploy";
 import "@matterlabs/hardhat-zksync-solc";
 import "@matterlabs/hardhat-zksync-verify";
+import "@matterlabs/hardhat-zksync-deploy";
 
 // If not set, it uses ours Alchemy's default API key.
 // You can get your own at https://dashboard.alchemyapi.io
@@ -27,7 +28,7 @@ const config: HardhatUserConfig = {
     },
   },
   zksolc: {
-    version: "1.3.7",
+    version: "1.3.13",
     settings: {
       optimizer: {
         enabled: true,
@@ -46,6 +47,7 @@ const config: HardhatUserConfig = {
     },
     owner: {
       default: 0,
+      zkSyncTestnet: "0xc4f6578c24c599F195c0758aD3D4861758d703A3",
     },
     troll: {
       default: 1,
@@ -55,6 +57,7 @@ const config: HardhatUserConfig = {
     // View the networks that are pre-configured.
     // If the network you are looking for is not here you can add new network settings
     hardhat: {
+      zksync: false,
       forking: {
         url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
         enabled: process.env.MAINNET_FORKING_ENABLED === "true",
@@ -101,12 +104,14 @@ const config: HardhatUserConfig = {
       zksync: true,
       accounts: [deployerPrivateKey],
       verifyURL: "https://zksync2-testnet-explorer.zksync.dev/contract_verification",
+      ethNetwork: "goerli",
     },
     zkSync: {
       url: "https://mainnet.era.zksync.io",
       zksync: true,
       accounts: [deployerPrivateKey],
       verifyURL: "https://zksync2-mainnet-explorer.zksync.io/contract_verification",
+      ethNetwork: "ethereum",
     },
     gnosis: {
       url: "https://rpc.gnosischain.com",

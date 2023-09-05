@@ -57,4 +57,8 @@ contract Diamond {
     }
 
     receive() external payable {}
+
+    function getContractOwner() public view returns (address contractOwner_) {
+        contractOwner_ = LibDiamond.contractOwner();
+    }
 }

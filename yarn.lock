@@ -911,6 +911,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@matterlabs/hardhat-zksync-deploy@npm:^0.6.4":
+  version: 0.6.4
+  resolution: "@matterlabs/hardhat-zksync-deploy@npm:0.6.4"
+  dependencies:
+    chalk: 4.1.2
+  peerDependencies:
+    ethers: ~5.7.2
+    hardhat: ^2.14.0
+    zksync-web3: ^0.14.3
+  checksum: 95cec5e73ed7c9c9a47e00cc00bfd9f12c02dfedbf57671a86046addb117885b46146a4419305c79364fd7252618c30fec50964803af2c0a15d71e87d3c2a102
+  languageName: node
+  linkType: hard
+
 "@matterlabs/hardhat-zksync-solc@npm:0.3.17, @matterlabs/hardhat-zksync-solc@npm:^0.3.17":
   version: 0.3.17
   resolution: "@matterlabs/hardhat-zksync-solc@npm:0.3.17"
@@ -1780,6 +1793,7 @@ __metadata:
   dependencies:
     "@ethersproject/abi": ^5.7.0
     "@ethersproject/providers": ^5.7.1
+    "@matterlabs/hardhat-zksync-deploy": ^0.6.4
     "@matterlabs/hardhat-zksync-solc": ^0.3.17
     "@matterlabs/hardhat-zksync-verify": ^0.1.8
     "@nomicfoundation/hardhat-chai-matchers": ^1.0.3
