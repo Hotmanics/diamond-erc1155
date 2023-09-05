@@ -11,6 +11,7 @@ library CustomERC1155Storage {
     struct Layout {
         mapping(address => bool) hasMinted;
         uint256 totalTokenTypeCount;
+        address owner;
     }
 
     function layout() internal pure returns (Layout storage l) {

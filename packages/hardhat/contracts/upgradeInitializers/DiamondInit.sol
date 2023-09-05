@@ -15,6 +15,8 @@ import {IDiamondLoupe} from "../interfaces/IDiamondLoupe.sol";
 import {IDiamondCut} from "../interfaces/IDiamondCut.sol";
 import {IERC173} from "@solidstate/contracts/interfaces/IERC173.sol";
 import {IERC165} from "@solidstate/contracts/interfaces/IERC165.sol";
+import {CustomERC1155Storage} from "../CustomERC1155Storage.sol";
+import {CustomERC1155} from "../CustomERC1155.sol";
 
 // It is expected that this contract is customized if you want to deploy your diamond
 // with data from a deployment script. Use the init function to initialize state variables

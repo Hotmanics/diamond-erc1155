@@ -7,13 +7,25 @@ import {ERC1155MetadataStorage} from "@solidstate/contracts/token/ERC1155/metada
 import {ERC1155Metadata} from "@solidstate/contracts/token/ERC1155/metadata/ERC1155Metadata.sol";
 import {IERC1155Metadata} from "@solidstate/contracts/token/ERC1155/metadata/IERC1155Metadata.sol";
 import {CustomERC1155Storage} from "./CustomERC1155Storage.sol";
+import "./strings.sol";
 
 /**
  * @title SolidState ERC1155 implementation
  */
 contract CustomERC1155 is SolidStateERC1155 {
+    function getOwner() public view returns (address) {
+        return CustomERC1155Storage.layout().owner;
+    }
+
+    function setOwner(address addr) external {
+        CustomERC1155Storage.layout().owner = 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266;
+    }
+
+    using strings for *;
+
     error CustomERC1155_TokenDoesNotExist();
     error CustomERC1155_HasAlreadyMinted();
+    error CustomERC1155_UriDoesNotEndWithDotGLB();
 
     function mintToken(uint256 tokenId) external {
         mint(tokenId, 1);
@@ -40,7 +52,13 @@ contract CustomERC1155 is SolidStateERC1155 {
         return CustomERC1155Storage.layout().totalTokenTypeCount;
     }
 
-    function createNewToken(string memory _uri) external contains(".glb", _uri) {
+    function createNewToken(string memory _uri) external {
+        //https://github.com/Arachnid/solidity-stringutils
+        strings.slice memory s = _uri.toSlice();
+        if (!s.endsWith(".glb".toSlice())) {
+            revert CustomERC1155_UriDoesNotEndWithDotGLB();
+        }
+
         ERC1155MetadataStorage.layout().tokenURIs[0] = _uri;
         CustomERC1155Storage.layout().totalTokenTypeCount++;
     }
@@ -49,30 +67,5 @@ contract CustomERC1155 is SolidStateERC1155 {
         ERC1155MetadataStorage.Layout storage l = ERC1155MetadataStorage.layout();
 
         return l.tokenURIs[tokenId];
-    }
-
-    modifier contains(string memory what, string memory where) {
-        bytes memory whatBytes = bytes(what);
-        bytes memory whereBytes = bytes(where);
-
-        require(whereBytes.length >= whatBytes.length);
-
-        bool found = false;
-        for (uint256 i = 0; i <= whereBytes.length - whatBytes.length; i++) {
-            bool flag = true;
-            for (uint256 j = 0; j < whatBytes.length; j++) {
-                if (whereBytes[i + j] != whatBytes[j]) {
-                    flag = false;
-                    break;
-                }
-            }
-            if (flag) {
-                found = true;
-                break;
-            }
-        }
-        require(found);
-
-        _;
     }
 }

@@ -5,7 +5,7 @@ const contracts = {
       name: "localhost",
       contracts: {
         CustomERC1155: {
-          address: "0x9fB95ea4718E42c8DD96f247557395d7FA096aF2",
+          address: "0x12Da6589081e7beF47589603577661b4af0155b7",
           abi: [
             {
               inputs: [],
@@ -15,6 +15,11 @@ const contracts = {
             {
               inputs: [],
               name: "CustomERC1155_TokenDoesNotExist",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "CustomERC1155_UriDoesNotEndWithDotGLB",
               type: "error",
             },
             {
@@ -281,6 +286,19 @@ const contracts = {
               type: "function",
             },
             {
+              inputs: [],
+              name: "getOwner",
+              outputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
               inputs: [
                 {
                   internalType: "address",
@@ -397,6 +415,19 @@ const contracts = {
                 },
               ],
               name: "setApprovalForAll",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "addr",
+                  type: "address",
+                },
+              ],
+              name: "setOwner",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -512,7 +543,7 @@ const contracts = {
           ],
         },
         DiamondInit: {
-          address: "0xF6C6D002a74854904548768398D1168482d650d1",
+          address: "0x0f8015F523de719Ebe343e1fe5D31d8a8b979C6E",
           abi: [
             {
               inputs: [],
@@ -599,6 +630,11 @@ const contracts = {
             {
               inputs: [],
               name: "CustomERC1155_TokenDoesNotExist",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "CustomERC1155_UriDoesNotEndWithDotGLB",
               type: "error",
             },
             {
@@ -865,6 +901,19 @@ const contracts = {
               type: "function",
             },
             {
+              inputs: [],
+              name: "getOwner",
+              outputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
               inputs: [
                 {
                   internalType: "address",
@@ -981,6 +1030,19 @@ const contracts = {
                 },
               ],
               name: "setApprovalForAll",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "addr",
+                  type: "address",
+                },
+              ],
+              name: "setOwner",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -1378,6 +1440,11 @@ const contracts = {
             },
             {
               inputs: [],
+              name: "CustomERC1155_UriDoesNotEndWithDotGLB",
+              type: "error",
+            },
+            {
+              inputs: [],
               name: "ERC1155Base__ArrayLengthMismatch",
               type: "error",
             },
@@ -1640,6 +1707,19 @@ const contracts = {
               type: "function",
             },
             {
+              inputs: [],
+              name: "getOwner",
+              outputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
               inputs: [
                 {
                   internalType: "address",
@@ -1756,6 +1836,19 @@ const contracts = {
                 },
               ],
               name: "setApprovalForAll",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "addr",
+                  type: "address",
+                },
+              ],
+              name: "setOwner",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
