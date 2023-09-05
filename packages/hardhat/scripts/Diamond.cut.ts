@@ -10,6 +10,7 @@ import { IDiamondCut } from "../typechain-types";
 export async function cutDiamond(
   diamondAddress: string,
   diamondInitAddress: string,
+  owner: string,
   facetCuts: IDiamondCut.FacetCutStruct[],
 ) {
   // connect to diamondCutFacet to call diamondCut
@@ -22,7 +23,7 @@ export async function cutDiamond(
   const tx = await diamondCutFacet.diamondCut(
     facetCuts,
     diamondInitAddress,
-    diamondInit.interface.encodeFunctionData("init"),
+    diamondInit.interface.encodeFunctionData("init(address owner)", [owner]),
   );
   const receipt = await tx.wait();
   if (!receipt.status) {

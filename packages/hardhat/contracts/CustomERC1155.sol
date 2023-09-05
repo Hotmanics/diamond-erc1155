@@ -45,7 +45,7 @@ contract CustomERC1155 is CustomERC1155Internal {
         return CustomERC1155Storage.layout().totalTokenTypeCount;
     }
 
-    function owner() external view returns (address) {
+    function anOwner() external view returns (address) {
         return CustomERC1155Storage.layout().owner;
     }
 }

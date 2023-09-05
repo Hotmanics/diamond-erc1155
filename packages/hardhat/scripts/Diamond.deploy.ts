@@ -1,8 +1,15 @@
 import { ethers } from "hardhat";
-import constants from "./constants";
-import { FacetCutAction } from "hardhat-deploy/types";
+// import constants from "./constants";
+
+enum FacetCutAction {
+  Add,
+  Replace,
+  Remove,
+}
+
 import { IDiamondCut } from "../typechain-types";
-import { cutDiamond } from "./Diamond.cut";
+// import { cutDiamond } from "./Diamond.cut";
+
 /**
  * Deploys a diamond contract.
  * @param ownerAddress contract owner
@@ -74,39 +81,39 @@ export async function deployFacet(facetName: string): Promise<IDiamondCut.FacetC
  * as well as facets specified in constants file.
  * @returns address of the Diamond contract.
  */
-export default async function main(): Promise<string> {
-  const [owner] = await ethers.getSigners();
+// export default async function main(): Promise<string> {
+//   const [owner] = await ethers.getSigners();
 
-  // deploy DiamondCutFacet
-  const diamondCutFacetAddress = await deployDiamondCutFacet();
-  console.log("DiamondCutFacet deployed:", diamondCutFacetAddress);
+//   // deploy DiamondCutFacet
+//   const diamondCutFacetAddress = await deployDiamondCutFacet();
+//   console.log("DiamondCutFacet deployed:", diamondCutFacetAddress);
 
-  // deploy Diamond
-  const diamondAddress = await deployDiamond(owner.address, diamondCutFacetAddress);
-  console.log("Diamond deployed:", diamondAddress);
+//   // deploy Diamond
+//   const diamondAddress = await deployDiamond(owner.address, diamondCutFacetAddress);
+//   console.log("Diamond deployed:", diamondAddress);
 
-  // deploy DiamondInit
-  const diamondInitAddress = await deployDiamondInit();
-  console.log("DiamondInit deployed:", diamondInitAddress);
+//   // deploy DiamondInit
+//   const diamondInitAddress = await deployDiamondInit();
+//   console.log("DiamondInit deployed:", diamondInitAddress);
 
-  // deploy facets
-  console.log("Deploying facets");
-  const facetCuts: IDiamondCut.FacetCutStruct[] = [];
-  await Promise.all(
-    constants.FacetNames.map(async facetName => {
-      console.log("\t", facetName);
-      const facetCut = await deployFacet(facetName);
-      facetCuts.push(facetCut);
-    }),
-  );
+//   // deploy facets
+//   console.log("Deploying facets");
+//   const facetCuts: IDiamondCut.FacetCutStruct[] = [];
+//   await Promise.all(
+//     constants.FacetNames.map(async facetName => {
+//       console.log("\t", facetName);
+//       const facetCut = await deployFacet(facetName);
+//       facetCuts.push(facetCut);
+//     }),
+//   );
 
-  // upgrade diamond with facets & call init function
-  console.log("\nDiamond Cuts:", facetCuts);
-  cutDiamond(diamondAddress, diamondInitAddress, facetCuts);
+//   // upgrade diamond with facets & call init function
+//   console.log("\nDiamond Cuts:", facetCuts);
+//   cutDiamond(diamondAddress, diamondInitAddress, facetCuts);
 
-  return diamondAddress;
-}
+//   return diamondAddress;
+// }
 
-if (require.main == module) {
-  main().then(() => console.log("Done"));
-}
+// if (require.main == module) {
+//   main().then(() => console.log("Done"));
+// }
