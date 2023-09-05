@@ -351,6 +351,19 @@ const contracts = {
             {
               inputs: [
                 {
+                  internalType: "string",
+                  name: "_uri",
+                  type: "string",
+                },
+              ],
+              name: "createNewToken",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
                   internalType: "address",
                   name: "account",
                   type: "address",
@@ -370,6 +383,19 @@ const contracts = {
                 },
               ],
               stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "mintToken",
+              outputs: [],
+              stateMutability: "nonpayable",
               type: "function",
             },
             {
@@ -1116,6 +1142,19 @@ const contracts = {
             {
               inputs: [
                 {
+                  internalType: "string",
+                  name: "_uri",
+                  type: "string",
+                },
+              ],
+              name: "createNewToken",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
                   internalType: "address",
                   name: "account",
                   type: "address",
@@ -1135,6 +1174,19 @@ const contracts = {
                 },
               ],
               stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "mintToken",
+              outputs: [],
+              stateMutability: "nonpayable",
               type: "function",
             },
             {
@@ -1535,7 +1587,7 @@ const contracts = {
           ],
         },
         CustomERC1155: {
-          address: "0xBD19D07F890679bE8Ec403783d72a344D73B925F",
+          address: "0x75a211DB7F2adD02e622d80334724b4d05001CA3",
           abi: [
             {
               inputs: [],
@@ -1810,6 +1862,19 @@ const contracts = {
             {
               inputs: [
                 {
+                  internalType: "string",
+                  name: "_uri",
+                  type: "string",
+                },
+              ],
+              name: "createNewToken",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
                   internalType: "address",
                   name: "account",
                   type: "address",
@@ -1829,6 +1894,19 @@ const contracts = {
                 },
               ],
               stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "mintToken",
+              outputs: [],
+              stateMutability: "nonpayable",
               type: "function",
             },
             {
@@ -2039,7 +2117,7 @@ const contracts = {
           ],
         },
         DiamondInit: {
-          address: "0xE2AbDdeDc12f819d8f90433B246d1a5C2f8d3fAA",
+          address: "0xDa8D7E2Dc26d2456D7e1724bBB50B88e97bFDED9",
           abi: [
             {
               inputs: [

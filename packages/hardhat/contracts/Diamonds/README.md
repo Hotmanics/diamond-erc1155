@@ -1,0 +1,1 @@
+These smart contracts are added here on purpose so that the tests can run properly.
