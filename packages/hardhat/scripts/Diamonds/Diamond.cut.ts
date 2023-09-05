@@ -1,5 +1,5 @@
 import { ethers } from "hardhat";
-import { IDiamondCut } from "../typechain-types";
+import { IDiamondCut } from "../../typechain-types";
 
 /**
  * Cuts the diamond with the given facet cuts.

@@ -35,6 +35,9 @@ const config: HardhatUserConfig = {
     owner: {
       default: 0,
     },
+    troll: {
+      default: 1,
+    },
   },
   networks: {
     // View the networks that are pre-configured.

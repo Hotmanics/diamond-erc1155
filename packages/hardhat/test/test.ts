@@ -2,20 +2,26 @@ import { ethers, getNamedAccounts, getUnnamedAccounts } from "hardhat";
 import { expect } from "chai";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { CustomERC1155, IDiamondCut } from "../typechain-types";
-import { deployDiamondCutFacet, deployFacet, deployDiamond, deployDiamondInit } from "../scripts/Diamond.deploy";
-import { cutDiamond } from "../scripts/Diamond.cut";
-import constants from "../scripts/constants";
+import {
+  deployDiamondCutFacet,
+  deployFacet,
+  deployDiamond,
+  deployDiamondInit,
+} from "../scripts/Diamonds/Diamond.deploy";
+import { cutDiamond } from "../scripts/Diamonds/Diamond.cut";
+import constants from "../scripts/Diamonds/constants";
 import { makeCut } from "./utils";
-import { FacetCutAction } from "../scripts/FacetCutAction";
+import { FacetCutAction } from "../scripts/Diamonds/FacetCutAction";
+import { setupUser } from "./utils";
 
 async function setup() {
-  const { owner } = await getNamedAccounts();
+  const { owner, troll } = await getNamedAccounts();
   const users = await getUnnamedAccounts();
 
   const signer = ethers.provider.getSigner();
   const ownerSigner = await SignerWithAddress.create(signer);
 
-  return { owner, users, ownerSigner };
+  return { owner, troll, users, ownerSigner };
 }
 
 describe("Diamond", function () {
@@ -59,11 +65,9 @@ describe("Diamond", function () {
 
   describe("CustomERC1155", async () => {
     let customERC1155: CustomERC1155;
-    let customERC1155Address: string;
     before(async () => {
       // sometimes, you dont' even need to cast typechain overloads the getContractAt within hardhat
       customERC1155 = await ethers.getContractAt("CustomERC1155", diamondAddress);
-      customERC1155Address = facetNameToAddress["CustomERC1155"];
     });
 
     it("should have the correct owner", async () => {
@@ -75,7 +79,72 @@ describe("Diamond", function () {
       expect(await customERC1155.totalTokenTypeCount()).to.be.eq(0);
     });
 
-    it("should remove all `CustomERC1155` functions", async () => {
+    it("mint: should revert from no tokens having been created yet", async () => {
+      await expect(customERC1155.mint(0)).to.be.revertedWithCustomError(
+        customERC1155,
+        "CustomERC1155_TokenDoesNotExist",
+      );
+    });
+
+    it("createTokenType: should revert from not passing in a uri that ends in .glb", async () => {
+      await expect(customERC1155.createTokenType("test1.gl")).to.be.revertedWithCustomError(
+        customERC1155,
+        "CustomERC1155_UriDoesNotEndWithDotGLB",
+      );
+    });
+
+    it("createTokenType: should revert from creating tokens as not the owner", async () => {
+      const contracts = {
+        CustomERC1155: customERC1155,
+      };
+
+      const { troll } = await setup();
+      //connect troll account
+      const troll0 = await setupUser(troll, contracts);
+      //call createTokenType as troll
+      await expect(troll0.CustomERC1155.createTokenType("ndjnjesn.glb")).to.be.revertedWithCustomError(
+        troll0.CustomERC1155,
+        "CustomERC1155_CreatingTokenButNotOwner",
+      );
+    });
+
+    it("createTokenType: should create a new token type", async () => {
+      await customERC1155.createTokenType("test1.glb");
+      expect(await customERC1155.totalTokenTypeCount()).to.be.eq(1);
+      expect(await customERC1155.uri(0)).to.be.eq("test1.glb");
+    });
+
+    it("createTokenType: should result in two tokens having different uris", async () => {
+      await customERC1155.createTokenType("test2.glb");
+
+      const uri0 = await customERC1155.uri(0);
+      const uri1 = await customERC1155.uri(1);
+      expect(uri0).to.not.equal(uri1);
+    });
+
+    it("mint: should revert from the specified token not having been created yet", async () => {
+      await expect(customERC1155.mint(2)).to.be.revertedWithCustomError(
+        customERC1155,
+        "CustomERC1155_TokenDoesNotExist",
+      );
+    });
+
+    it("mint: should mint a token", async () => {
+      const { owner } = await setup();
+
+      await customERC1155.mint(0);
+      expect(await customERC1155.balanceOf(owner, 0)).to.be.eq(1);
+    });
+
+    it("mint: should revert from user having already minted", async () => {
+      await expect(customERC1155.mint(0)).to.be.revertedWithCustomError(
+        customERC1155,
+        "CustomERC1155_HasAlreadyMinted",
+      );
+    });
+
+    //Diamond Sanity Checks
+    it("diamond sanity checks: should remove all `CustomERC1155` functions", async () => {
       const signer = ethers.provider.getSigner();
       const ownerSigner = await SignerWithAddress.create(signer);
 
@@ -97,8 +166,10 @@ describe("Diamond", function () {
       await expect(customERC1155.totalTokenTypeCount()).to.be.revertedWith("Diamond: Function does not exist");
     });
 
-    it("should add all `CustomERC1155` functions back in", async () => {
+    it("diamond sanity checks: should add all `CustomERC1155` functions back in", async () => {
       const { owner, ownerSigner } = await setup();
+
+      const customERC1155Address = facetNameToAddress["CustomERC1155"];
 
       await makeCut(
         ownerSigner,

@@ -1,7 +1,7 @@
 import { ethers } from "hardhat";
-import { FacetCutAction } from "../scripts/FacetCutAction";
-import constants from "../scripts/constants";
-import { IDiamondCut } from "../typechain-types";
+import { FacetCutAction } from "./FacetCutAction";
+import constants from "./constants";
+import { IDiamondCut } from "../../typechain-types";
 import { cutDiamond } from "./Diamond.cut";
 
 /**

@@ -45,7 +45,7 @@ contract CustomERC1155Internal is SolidStateERC1155, ICustomERC1155BaseInternal 
      * @param _uri: The uri to set for the created token.
      * @notice This function creates a new token type.
      */
-    function _createNewToken(string memory _uri) internal {
+    function _createTokenType(string memory _uri) internal {
         //Revert if the owner of the smart contract is not msg.sender.
         if (msg.sender != CustomERC1155Storage.layout().owner) {
             revert CustomERC1155_CreatingTokenButNotOwner();
@@ -71,8 +71,8 @@ contract CustomERC1155Internal is SolidStateERC1155, ICustomERC1155BaseInternal 
      * @param tokenId The id of the token type to mint tokens of.
      * @notice This function mints 1 token of a given token type to the user.
      */
-    function _mintToken(uint256 tokenId) internal {
-        _mintTokenById(tokenId, 1);
+    function _mintByTokenId(uint256 tokenId) internal {
+        _mintByTokenIdAndAmount(tokenId, 1);
     }
 
     /**
@@ -81,7 +81,7 @@ contract CustomERC1155Internal is SolidStateERC1155, ICustomERC1155BaseInternal 
      * @param tokenAmount: The amount of tokens to mint of token type of tokenId.
      * @notice This function mints an amount of tokens of a given token type to the user.
      */
-    function _mintTokenById(uint256 tokenId, uint256 tokenAmount) internal {
+    function _mintByTokenIdAndAmount(uint256 tokenId, uint256 tokenAmount) internal {
         //Checks if token type of tokenId has been created yet.
         if (CustomERC1155Storage.layout().totalTokenTypeCount > 0) {
             // Check if the supplied tokenId is greater than the number of created tokens - 1.
@@ -89,7 +89,7 @@ contract CustomERC1155Internal is SolidStateERC1155, ICustomERC1155BaseInternal 
                 revert CustomERC1155_TokenDoesNotExist();
             }
         }
-        //If no tokens have been created yet, then rus this code.
+        //If no tokens have been created yet, then run this code.
         else {
             revert CustomERC1155_TokenDoesNotExist();
         }

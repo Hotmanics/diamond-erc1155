@@ -32,8 +32,8 @@ contract CustomERC1155 is CustomERC1155Internal {
      * @param _uri: The uri of the token to create.
      * @notice Creates a new token type by calling the internal function from CustomERC1155Internal.
      */
-    function createNewToken(string memory _uri) external {
-        _createNewToken(_uri);
+    function createTokenType(string memory _uri) external {
+        _createTokenType(_uri);
     }
 
     /**
@@ -41,8 +41,8 @@ contract CustomERC1155 is CustomERC1155Internal {
      * @param tokenId: The id of the token type to mint tokens of.
      * @notice Mints a new token by calling the internal function from CustomERC1155Internal.
      */
-    function mintToken(uint256 tokenId) external {
-        _mintToken(tokenId);
+    function mint(uint256 tokenId) external {
+        _mintByTokenId(tokenId);
     }
 
     ////////////////////////////////////////////////////////////////////////////
