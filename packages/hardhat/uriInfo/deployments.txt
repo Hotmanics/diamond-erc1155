@@ -1,0 +1,9 @@
+token images directory
+bafybeihkrubxx6zzzsap3lrc2vxofvqmzr43cwzsc4hbkaom66d4xzsii4
+ipfs://bafybeihkrubxx6zzzsap3lrc2vxofvqmzr43cwzsc4hbkaom66d4xzsii4/
+https://nftstorage.link/ipfs/bafybeihkrubxx6zzzsap3lrc2vxofvqmzr43cwzsc4hbkaom66d4xzsii4/
+
+tokens json directory
+bafybeih6ptu72ftug2ekzq7mivgs4hqdyffdiib3b6akqfgefxk4nn4g3u
+ipfs://bafybeih6ptu72ftug2ekzq7mivgs4hqdyffdiib3b6akqfgefxk4nn4g3u/
+https://nftstorage.link/ipfs/bafybeih6ptu72ftug2ekzq7mivgs4hqdyffdiib3b6akqfgefxk4nn4g3u/

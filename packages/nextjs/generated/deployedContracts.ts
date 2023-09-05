@@ -5,8 +5,18 @@ const contracts = {
       name: "localhost",
       contracts: {
         CustomERC1155: {
-          address: "0xEa895E3971eA4A9d14e30ef8263B088D441C5a25",
+          address: "0x9fB95ea4718E42c8DD96f247557395d7FA096aF2",
           abi: [
+            {
+              inputs: [],
+              name: "CustomERC1155_HasAlreadyMinted",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "CustomERC1155_TokenDoesNotExist",
+              type: "error",
+            },
             {
               inputs: [],
               name: "ERC1155Base__ArrayLengthMismatch",
@@ -260,6 +270,19 @@ const contracts = {
             {
               inputs: [
                 {
+                  internalType: "string",
+                  name: "_uri",
+                  type: "string",
+                },
+              ],
+              name: "createNewToken",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
                   internalType: "address",
                   name: "account",
                   type: "address",
@@ -282,8 +305,14 @@ const contracts = {
               type: "function",
             },
             {
-              inputs: [],
-              name: "mint",
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "mintToken",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -449,6 +478,19 @@ const contracts = {
               type: "function",
             },
             {
+              inputs: [],
+              name: "totalTokenTypeCount",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
               inputs: [
                 {
                   internalType: "uint256",
@@ -548,6 +590,16 @@ const contracts = {
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
+            },
+            {
+              inputs: [],
+              name: "CustomERC1155_HasAlreadyMinted",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "CustomERC1155_TokenDoesNotExist",
+              type: "error",
             },
             {
               inputs: [],
@@ -802,6 +854,19 @@ const contracts = {
             {
               inputs: [
                 {
+                  internalType: "string",
+                  name: "_uri",
+                  type: "string",
+                },
+              ],
+              name: "createNewToken",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
                   internalType: "address",
                   name: "account",
                   type: "address",
@@ -824,8 +889,14 @@ const contracts = {
               type: "function",
             },
             {
-              inputs: [],
-              name: "mint",
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "mintToken",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -961,6 +1032,19 @@ const contracts = {
                 },
               ],
               name: "totalSupply",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "totalTokenTypeCount",
               outputs: [
                 {
                   internalType: "uint256",
@@ -1284,6 +1368,16 @@ const contracts = {
             },
             {
               inputs: [],
+              name: "CustomERC1155_HasAlreadyMinted",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "CustomERC1155_TokenDoesNotExist",
+              type: "error",
+            },
+            {
+              inputs: [],
               name: "ERC1155Base__ArrayLengthMismatch",
               type: "error",
             },
@@ -1535,6 +1629,19 @@ const contracts = {
             {
               inputs: [
                 {
+                  internalType: "string",
+                  name: "_uri",
+                  type: "string",
+                },
+              ],
+              name: "createNewToken",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
                   internalType: "address",
                   name: "account",
                   type: "address",
@@ -1557,8 +1664,14 @@ const contracts = {
               type: "function",
             },
             {
-              inputs: [],
-              name: "mint",
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "tokenId",
+                  type: "uint256",
+                },
+              ],
+              name: "mintToken",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -1694,6 +1807,19 @@ const contracts = {
                 },
               ],
               name: "totalSupply",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "totalTokenTypeCount",
               outputs: [
                 {
                   internalType: "uint256",
