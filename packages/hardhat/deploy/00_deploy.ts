@@ -14,7 +14,8 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
 
   let owner;
 
-  //Checking to see if owner is
+  //Checking to see if the chain is localhost, if so deploy with default hardhat/anvil key.
+  //Otherwise deploy with key from hardhat config
   const chainId = hre.network.config.chainId;
   if (chainId === 31337) {
     owner = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
@@ -22,6 +23,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
     owner = deployer;
   }
 
+  //Deploys diamond with DiamondInit and CustomERC155 facets and calls init function on DiamondInitFacet.
   await diamond.deploy("CustomERC1155 - Actual", {
     from: owner,
     autoMine: true,

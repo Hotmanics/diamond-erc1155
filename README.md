@@ -1,36 +1,5 @@
 # Jacob Homanics
 
-## Quickstart
-
-1. install dependencies
-
-```
-yarn install
-```
-
-1. Run a local network, deploy diamonds, and view contracts on scaffold.
-```
-yarn full
-```  
-
-
-# 🏗 Scaffold-ETH 2
-
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
-
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
-
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, and Typescript.
-
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
-
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/1171422a-0ce4-4203-bcd4-d2d1941d198b)
-
 ## Requirements
 
 Before you begin, you need to install the following tools:
@@ -71,24 +40,32 @@ This command deploys a test smart contract to the local network. The contract is
 
 ```
 yarn start
+
 ```
+
+Interact with the local simnet by importing the following private key into MetaMask. _Do not use this private key anywhere else_
+
+```
+Private Key:
+0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+```
+
+Then add an RPC provider to MetaMask to point to your local simnet.
+
+1.  Navigate to settings
+2.  Select `Networks`
+3.  Click `Add Network`
+4.  Enter the following:
+
+         Network Name: Hardhat
+         New RPC URL: http://localhost:8545
+         Chain ID: 31337
+
+Select the network and connect to your local Nouns webapp to interact with simnet
 
 Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the contract component or the example ui in the frontend. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
 
+# Testing
+
 Run smart contract test with `yarn hardhat:test`
 
-- Edit your smart contract `YourContract.sol` in `packages/hardhat/contracts`
-- Edit your frontend in `packages/nextjs/pages`
-- Edit your deployment scripts in `packages/hardhat/deploy`
-
-## Documentation
-
-Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
-
-To know more about its features, check out our [website](https://scaffoldeth.io).
-
-## Contributing to Scaffold-ETH 2
-
-We welcome contributions to Scaffold-ETH 2!
-
-Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
