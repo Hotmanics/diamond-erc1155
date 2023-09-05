@@ -71,7 +71,7 @@ async function deployFacet(deployer: Deployer, facetName: string) {
   const facetArtifact = await deployer.loadArtifact(facetName);
   console.log("deploying " + facetName + "...");
   const facet = await deployer.deploy(facetArtifact);
-  console.log("deployed " + facetName);
+  console.log("deployed " + facetName + " to " + facet.address);
   return {
     facetAddress: facet.address,
     action: FacetCutAction.Add,

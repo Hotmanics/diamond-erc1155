@@ -44,6 +44,7 @@ const config: HardhatUserConfig = {
       default: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
       goerli: "0xc4f6578c24c599F195c0758aD3D4861758d703A3",
       zkSyncTestnet: "0xc4f6578c24c599F195c0758aD3D4861758d703A3",
+      zkSync: "0xc4f6578c24c599F195c0758aD3D4861758d703A3",
     },
     owner: {
       default: 0,

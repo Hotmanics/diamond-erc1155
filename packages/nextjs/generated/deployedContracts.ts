@@ -2906,7 +2906,7 @@ const contracts = {
                   type: "string",
                 },
               ],
-              name: "createNewToken",
+              name: "createTokenType",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -2943,7 +2943,7 @@ const contracts = {
                   type: "uint256",
                 },
               ],
-              name: "mintToken",
+              name: "mint",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -3735,7 +3735,7 @@ const contracts = {
                   type: "string",
                 },
               ],
-              name: "createNewToken",
+              name: "createTokenType",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -3772,7 +3772,7 @@ const contracts = {
                   type: "uint256",
                 },
               ],
-              name: "mintToken",
+              name: "mint",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -4175,7 +4175,7 @@ const contracts = {
           ],
         },
         CustomERC1155: {
-          address: "0xF12337d0127Ca88D5E356309d85EeE753f82072a",
+          address: "0x78B5200D2Fc908E41E25AbD7698F6BCaf21AeF24",
           abi: [
             {
               inputs: [],
@@ -4493,7 +4493,7 @@ const contracts = {
                   type: "string",
                 },
               ],
-              name: "createNewToken",
+              name: "createTokenType",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -4530,7 +4530,7 @@ const contracts = {
                   type: "uint256",
                 },
               ],
-              name: "mintToken",
+              name: "mint",
               outputs: [],
               stateMutability: "nonpayable",
               type: "function",
@@ -4743,7 +4743,7 @@ const contracts = {
           ],
         },
         DiamondInit: {
-          address: "0x380cFB117BeaAa0E5bA6aECE5AC9Df1Fa558F5A3",
+          address: "0x4d1E6B6C684E74a8129A03cDfAb041EfA0708F8f",
           abi: [
             {
               inputs: [
