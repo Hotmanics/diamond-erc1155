@@ -5,30 +5,12 @@ import { cutDiamond } from "../scripts/Diamond.cut";
 import { CustomERC1155, IDiamondCut } from "../typechain-types";
 import { deployDiamondCutFacet, deployFacet, deployDiamond, deployDiamondInit } from "../scripts/Diamond.deploy";
 import { ethers, getNamedAccounts, getUnnamedAccounts } from "hardhat";
+import { makeCut } from "./utils";
+
 enum FacetCutAction {
   Add,
   Replace,
   Remove,
-}
-
-/**
- * Utility function to make a facet cut on the diamond.
- * @param diamondAddress diamond cut facet contract
- * @param facetCuts an array of facet cuts to be made
- * @param init address (?)
- */
-async function makeCut(
-  signer: SignerWithAddress,
-  diamondAddress: string,
-  facetCuts: IDiamondCut.FacetCutStruct[],
-  init: string,
-) {
-  const diamondCutFacet = await ethers.getContractAt("DiamondCutFacet", diamondAddress, signer);
-  const tx = await diamondCutFacet.diamondCut(facetCuts, init, "0x", { gasLimit: 800000 });
-  const receipt = await tx.wait();
-  if (!receipt.status) {
-    throw Error(`Diamond upgrade failed: ${tx.hash}`);
-  }
 }
 
 async function setup() {
@@ -42,20 +24,13 @@ async function setup() {
 }
 
 describe("Diamond", function () {
-  // let owner: SignerWithAddress;
   let diamondCutFacetAddress: string;
   let diamondAddress: string;
   let diamondInitAddress: string;
   const facetCuts: IDiamondCut.FacetCutStruct[] = []; // each facet will be recorded here
   const facetNameToAddress: Record<string, string> = {};
 
-  // before(async () => {
-  //   [owner] = await ethers.getSigners();
-  // });
-
   describe("Diamond Deployment & Cut", async () => {
-    // console.log(owner);
-
     it("should deploy DiamondCutFacet", async () => {
       diamondCutFacetAddress = await deployDiamondCutFacet();
     });
@@ -94,7 +69,6 @@ describe("Diamond", function () {
       // sometimes, you dont' even need to cast typechain overloads the getContractAt within hardhat
       customERC1155 = await ethers.getContractAt("CustomERC1155", diamondAddress);
       customERC1155Address = facetNameToAddress["CustomERC1155"];
-      console.log(customERC1155Address);
     });
 
     it("should have the correct owner", async () => {
