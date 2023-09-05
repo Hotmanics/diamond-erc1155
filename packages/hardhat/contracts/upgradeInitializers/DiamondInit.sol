@@ -36,7 +36,6 @@ contract DiamondInit is UsingDiamondOwner, WithStorage {
         if (s().isInitialized) return;
 
         a().owner = owner;
-        a().totalTokenTypeCount = 15;
 
         // adding ERC165 data
         ds().supportedInterfaces[type(IERC165).interfaceId] = true;

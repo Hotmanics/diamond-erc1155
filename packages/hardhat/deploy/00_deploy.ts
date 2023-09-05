@@ -11,7 +11,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const { deployer } = await hre.getNamedAccounts();
   const { diamond } = hre.deployments;
 
-  await diamond.deploy("ERC1155Example", {
+  await diamond.deploy("CustomERC1155 - Actual", {
     from: deployer,
     autoMine: true,
     log: true,
