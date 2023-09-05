@@ -26,11 +26,23 @@ const config: HardhatUserConfig = {
       },
     },
   },
+  zksolc: {
+    version: "1.3.7",
+    settings: {
+      optimizer: {
+        enabled: true,
+        // https://docs.soliditylang.org/en/latest/using-the-compiler.html#optimizer-options
+        runs: 200,
+      },
+    },
+  },
   defaultNetwork: "localhost",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
       default: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      goerli: "0xc4f6578c24c599F195c0758aD3D4861758d703A3",
+      zkSync: "0xc4f6578c24c599F195c0758aD3D4861758d703A3",
     },
     owner: {
       default: 0,
