@@ -6,7 +6,7 @@ import {ERC1155MetadataStorage} from "@solidstate/contracts/token/ERC1155/metada
 import {ERC1155Metadata} from "@solidstate/contracts/token/ERC1155/metadata/ERC1155Metadata.sol";
 import {IERC1155Metadata} from "@solidstate/contracts/token/ERC1155/metadata/IERC1155Metadata.sol";
 import {CustomERC1155Storage} from "./CustomERC1155Storage.sol";
-import {ICustomERC1155Internal} from "./ICustomERC1155Internal.sol";
+import {ICustomERC1155BaseInternal} from "./ICustomERC1155BaseInternal.sol";
 import "./libraries/strings.sol";
 
 /**
@@ -24,9 +24,7 @@ import "./libraries/strings.sol";
  *      Source code and info found here: https://github.com/solidstate-network/solidstate-solidity
  * @dev This contract inherits from ICustomERC1155Internal. Which contains the errors of the smart contract.
  */
-contract CustomERC1155Internal is SolidStateERC1155, ICustomERC1155Internal {
-    //TODO:// Add Events
-
+contract CustomERC1155Internal is SolidStateERC1155, ICustomERC1155BaseInternal {
     ///////////////////
     // Types
     ///////////////////
@@ -64,6 +62,8 @@ contract CustomERC1155Internal is SolidStateERC1155, ICustomERC1155Internal {
         ERC1155MetadataStorage.layout().tokenURIs[CustomERC1155Storage.layout().totalTokenTypeCount] = _uri;
         //Incremets count of total tokens in collection.
         CustomERC1155Storage.layout().totalTokenTypeCount++;
+
+        emit CreateToken(msg.sender, CustomERC1155Storage.layout().totalTokenTypeCount - 1);
     }
 
     /**
@@ -101,5 +101,7 @@ contract CustomERC1155Internal is SolidStateERC1155, ICustomERC1155Internal {
 
         _mint(msg.sender, tokenId, tokenAmount, "");
         CustomERC1155Storage.layout().hasMinted[msg.sender] = true;
+
+        emit MintToken(msg.sender, tokenId);
     }
 }

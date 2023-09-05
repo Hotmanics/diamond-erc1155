@@ -198,6 +198,44 @@ const contracts = {
                   type: "address",
                 },
                 {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "CreateToken",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "minter",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "MintToken",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
                   indexed: true,
                   internalType: "address",
                   name: "from",
@@ -989,6 +1027,44 @@ const contracts = {
                   type: "address",
                 },
                 {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "CreateToken",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "minter",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "MintToken",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
                   indexed: true,
                   internalType: "address",
                   name: "from",
@@ -1587,7 +1663,7 @@ const contracts = {
           ],
         },
         CustomERC1155: {
-          address: "0x75a211DB7F2adD02e622d80334724b4d05001CA3",
+          address: "0x90cCA76b644350E023788976E071F81ad8bC5Ab3",
           abi: [
             {
               inputs: [],
@@ -1697,6 +1773,44 @@ const contracts = {
                 },
               ],
               name: "ApprovalForAll",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "operator",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "CreateToken",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "minter",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+              ],
+              name: "MintToken",
               type: "event",
             },
             {
@@ -2117,7 +2231,7 @@ const contracts = {
           ],
         },
         DiamondInit: {
-          address: "0xDa8D7E2Dc26d2456D7e1724bBB50B88e97bFDED9",
+          address: "0xbeC217dfe6FfE210415E19B9Be27Fa2eF918c48f",
           abi: [
             {
               inputs: [
