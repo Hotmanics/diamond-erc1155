@@ -1,5 +1,5 @@
 const contractConstants = {
-  FacetNames: ["DiamondLoupeFacet", "OwnershipFacet", "FoobarFacet"],
+  FacetNames: ["DiamondLoupeFacet", "CustomERC1155"],
 };
 
 export default contractConstants as Readonly<typeof contractConstants>;
