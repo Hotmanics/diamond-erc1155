@@ -1,3 +1,24 @@
+// Layout of Contract:
+// version
+// imports
+// errors
+// interfaces, libraries, contracts
+// Type declarations
+// State variables
+// Events
+// Modifiers
+// Functions
+
+// Layout of Functions:
+// constructor
+// receive function (if exists)
+// fallback function (if exists)
+// external
+// public
+// internal
+// private
+// view & pure functions
+
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.8;
@@ -18,6 +39,22 @@ contract CustomERC1155 is SolidStateERC1155 {
     error CustomERC1155_TokenDoesNotExist();
     error CustomERC1155_HasAlreadyMinted();
     error CustomERC1155_UriDoesNotEndWithDotGLB();
+    error CustomERC1155_CreatingTokenButNotOwner();
+
+    function createNewToken(string memory _uri) external {
+        if (msg.sender != CustomERC1155Storage.layout().owner) {
+            revert CustomERC1155_CreatingTokenButNotOwner();
+        }
+
+        //https://github.com/Arachnid/solidity-stringutils
+        strings.slice memory s = _uri.toSlice();
+        if (!s.endsWith(".glb".toSlice())) {
+            revert CustomERC1155_UriDoesNotEndWithDotGLB();
+        }
+
+        ERC1155MetadataStorage.layout().tokenURIs[0] = _uri;
+        CustomERC1155Storage.layout().totalTokenTypeCount++;
+    }
 
     function mintToken(uint256 tokenId) external {
         mint(tokenId, 1);
@@ -40,28 +77,17 @@ contract CustomERC1155 is SolidStateERC1155 {
         CustomERC1155Storage.layout().hasMinted[msg.sender] = true;
     }
 
-    function owner() public view returns (address) {
-        return CustomERC1155Storage.layout().owner;
+    function uri(uint256 tokenId) public view override(ERC1155Metadata, IERC1155Metadata) returns (string memory) {
+        ERC1155MetadataStorage.Layout storage l = ERC1155MetadataStorage.layout();
+
+        return l.tokenURIs[tokenId];
     }
 
     function totalTokenTypeCount() public view returns (uint256) {
         return CustomERC1155Storage.layout().totalTokenTypeCount;
     }
 
-    function createNewToken(string memory _uri) external {
-        //https://github.com/Arachnid/solidity-stringutils
-        strings.slice memory s = _uri.toSlice();
-        if (!s.endsWith(".glb".toSlice())) {
-            revert CustomERC1155_UriDoesNotEndWithDotGLB();
-        }
-
-        ERC1155MetadataStorage.layout().tokenURIs[0] = _uri;
-        CustomERC1155Storage.layout().totalTokenTypeCount++;
-    }
-
-    function uri(uint256 tokenId) public view override(ERC1155Metadata, IERC1155Metadata) returns (string memory) {
-        ERC1155MetadataStorage.Layout storage l = ERC1155MetadataStorage.layout();
-
-        return l.tokenURIs[tokenId];
+    function owner() external view returns (address) {
+        return CustomERC1155Storage.layout().owner;
     }
 }

@@ -23,7 +23,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
     execute: {
       contract: "DiamondInit",
       methodName: "init",
-      args: [],
+      args: ["0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"],
     },
   });
 };

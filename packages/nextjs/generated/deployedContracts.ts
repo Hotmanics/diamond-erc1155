@@ -530,10 +530,16 @@ const contracts = {
           ],
         },
         DiamondInit: {
-          address: "0x49e1924de6aAE894825A16f0FF1Cc0A714502940",
+          address: "0xbC527bfb50E9bB907e4e3f9f06c2b9EE65E1C896",
           abi: [
             {
-              inputs: [],
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "owner",
+                  type: "address",
+                },
+              ],
               name: "init",
               outputs: [],
               stateMutability: "nonpayable",
@@ -603,7 +609,13 @@ const contracts = {
               type: "receive",
             },
             {
-              inputs: [],
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "owner",
+                  type: "address",
+                },
+              ],
               name: "init",
               outputs: [],
               stateMutability: "nonpayable",
@@ -1383,7 +1395,13 @@ const contracts = {
               type: "receive",
             },
             {
-              inputs: [],
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "owner",
+                  type: "address",
+                },
+              ],
               name: "init",
               outputs: [],
               stateMutability: "nonpayable",
