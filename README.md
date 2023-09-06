@@ -34,20 +34,20 @@ yarn hardhat:test
 3. There are two paths to take in this README: `3.1` and `3.2`. `3.1` follows development with your local hardhat node and most EVM compatible chains. `3.2` follows development with ZkSync and ZkSync Testnet. There are key differences in their development processes, therefore you need to interact with the project differently based on your needs.
 
     3.1. Hardhat & Most EVM Compatible Chains Development
-    
-        3.1.1. Run a local network in the first terminal:
 
-        ```
-        yarn chain
-        ```
+    3.1.1. Run a local network in the first terminal:
 
-        This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `hardhat.config.ts`.
+    ```
+    yarn chain
+    ```
 
-        3.1.2. On a second terminal, deploy the test contract:
+    This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `hardhat.config.ts`.
 
-        ```
-        yarn deploy
-        ```
+    3.1.2. On a second terminal, deploy the test contract:
+
+    ```
+    yarn deploy
+    ```
 
 This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script. 
 
