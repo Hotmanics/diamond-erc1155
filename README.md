@@ -20,18 +20,20 @@ Before you begin, you need to install the following tools:
 ## Quickstart
 NOTE: All commands can be done from the repository's root directory.
 
-1. Clone this repo & install dependencies
+# 1. Clone this repo & install dependencies
 
 ```
 yarn install
 ```
 
-2. Run smart contract tests on local hardhat node:
+# 2. Run smart contract tests on local hardhat node:
+
 ```
 yarn hardhat:test
 ```
 
-3. There are two paths to take in this README: `3.1` and `3.2`. `3.1` follows development with your local hardhat node and most EVM compatible chains. `3.2` follows development with ZkSync and ZkSync Testnet. There are key differences in their development processes, therefore you need to interact with the project differently based on your needs.
+# 3. Envrionment specific paths
+ There are two paths to take in this README: `3.1` and `3.2`. `3.1` follows development with your local hardhat node and most EVM compatible chains. `3.2` follows development with ZkSync and ZkSync Testnet. There are key differences in their development processes, therefore you need to interact with the project differently based on your needs.
 
     ## 3.1. Hardhat & Most EVM Compatible Chains Development
 
