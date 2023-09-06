@@ -1,7 +1,7 @@
 # Jacob Homanics
 
 # Smart Contract Development Test using ZkSync L2
-To satisfy the demands of Smart Contract Development Test using ZkSync L2, please refer to this section. Everything else is an added bonus :)
+To satisfy the demands of the Smart Contract Development Test using ZkSync L2 document, please refer to this section. Everything else is an added bonus :)
 
 ## Commands
 
@@ -16,9 +16,13 @@ yarn hardhat:test
 ## ZKSync Deployments:
 
 Diamond: [0x3804798C2e9Cfaf7d0591955B042aDB316D2E764](https://goerli.explorer.zksync.io/address/0x3804798C2e9Cfaf7d0591955B042aDB316D2E764)
+
 DiamondCutFacet: [0xc6514Db2418dff785130731eA46993c971f96B54](https://goerli.explorer.zksync.io/address/0xc6514Db2418dff785130731eA46993c971f96B54)
+
 DiamondInit: [0xDEAe470139f359F569Bad53407238e61113DbfE5](https://goerli.explorer.zksync.io/address/0xDEAe470139f359F569Bad53407238e61113DbfE5)
+
 DiamondLoupeFacet: [0x9A62534456456cFCEC8dDdb5347cF8ffe11EC172](https://goerli.explorer.zksync.io/address/0x9A62534456456cFCEC8dDdb5347cF8ffe11EC172)
+
 CustomERC1155: [0x752BAc499975842BdF376E5588c059fe9f4F08FB](https://goerli.explorer.zksync.io/address/0x752BAc499975842BdF376E5588c059fe9f4F08FB)
 
 # Scaffold Eth 2
