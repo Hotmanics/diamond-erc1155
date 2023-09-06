@@ -1,9 +1,13 @@
 # Jacob Homanics
 
+The main goal of this repository is to host code to build a customized ERC1155 Collection that adheres to the ERC2535 (Diamonds) standard using the Diamond Storage Pattern. Through this repository, one can deploy a Diamond with an ERC1155 Facet to succesfully have an ERC1155 Collection exist within a Diamond. The project pulls from the [SolidState](https://github.com/solidstate-network/solidstate-solidity) smart contracts which are "Diamond First" smart contracts to be used as starting points to build for diamonds using several popular EIP standards. The project pulled from a lot of resources to make possible, more info can be found in the document at `~/resources.txt`.
+
+Ultimately, through this repository, you can build a Diamond with full customizable ERC1155 functionality following the Diamond Storage pattern, thoroughly run it through a multitude of tests, and deploy it to most EVM compatible chains, including ZkSync.
+
 # Smart Contract Development Test using ZkSync L2
 To satisfy the demands of the Smart Contract Development Test using ZkSync L2 document, please refer to this section. Everything else is an added bonus :)
 
-## Commands
+### Commands
 
 ```
 yarn install
@@ -13,7 +17,7 @@ yarn install
 yarn hardhat:test
 ```
 
-## ZKSync Deployments:
+### ZKSync Deployments:
 
 Diamond: [0x3804798C2e9Cfaf7d0591955B042aDB316D2E764](https://goerli.explorer.zksync.io/address/0x3804798C2e9Cfaf7d0591955B042aDB316D2E764)
 
