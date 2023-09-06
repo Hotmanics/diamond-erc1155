@@ -1,4 +1,3 @@
-import { loadedContracts } from "./contractUtils";
 import {
   Abi,
   AbiParameterToPrimitiveType,
@@ -12,6 +11,7 @@ import { Address, Log, TransactionReceipt } from "viem";
 import { Prettify } from "viem/dist/types/types/utils";
 import { UseContractEventConfig, UseContractReadConfig, UseContractWriteConfig } from "wagmi";
 import contractsData from "~~/generated/deployedContracts";
+// import contractsData from "~~/generated/zkDeployedContracts";
 import scaffoldConfig from "~~/scaffold.config";
 
 export type GenericContractsDeclaration = {
@@ -27,7 +27,7 @@ export type GenericContractsDeclaration = {
   }[];
 };
 
-export const contracts = loadedContracts;
+export const contracts = contractsData as GenericContractsDeclaration | null;
 
 type ConfiguredChainId = (typeof scaffoldConfig)["targetNetwork"]["id"];
 
