@@ -1,3 +1,4 @@
+import { loadedContracts } from "./contractUtils";
 import {
   Abi,
   AbiParameterToPrimitiveType,
@@ -10,9 +11,7 @@ import type { ExtractAbiFunctionNames } from "abitype";
 import { Address, Log, TransactionReceipt } from "viem";
 import { Prettify } from "viem/dist/types/types/utils";
 import { UseContractEventConfig, UseContractReadConfig, UseContractWriteConfig } from "wagmi";
-import * as chains from "wagmi/chains";
 import contractsData from "~~/generated/deployedContracts";
-import zkContractsData from "~~/generated/zkDeployedContracts";
 import scaffoldConfig from "~~/scaffold.config";
 
 export type GenericContractsDeclaration = {
@@ -28,12 +27,7 @@ export type GenericContractsDeclaration = {
   }[];
 };
 
-// export const contracts = contractsData as GenericContractsDeclaration | null;
-export const contracts =
-  //@ts-ignore
-  scaffoldConfig.targetNetwork.id !== chains.zkSyncTestnet.id
-    ? (contractsData as GenericContractsDeclaration | null)
-    : (zkContractsData as GenericContractsDeclaration | null);
+export const contracts = loadedContracts;
 
 type ConfiguredChainId = (typeof scaffoldConfig)["targetNetwork"]["id"];
 
