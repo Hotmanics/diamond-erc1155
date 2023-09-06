@@ -114,7 +114,7 @@ ETHERSCAN_API_KEY=
 ```
 
 #### 3.2.3 Deploy to Zksync testnet:
-First move `packages/hardhat/deploy-zk/00_deployDiamondWithCustomERC1155_zkSync.ts` to the `deploy` folder. Doing so now locks you into developing on ZkSync aside from running tests. If you want to deploy to any other network (even a local hardhat node), then you need to remove `00_deployDiamondWithCustomERC1155_zkSync.ts` from the `deploy` folder.
+First move `packages/hardhat/deploy-zk/00_deployDiamondWithCustomERC1155_zkSync.ts` to the `deploy` folder. 
 
 Next, run this command in your terminal:
  
@@ -143,9 +143,8 @@ Additionally, uncomment this line of code in the same file like so:
 import contractsData from "~~/generated/zkDeployedContracts";
 ```
 
-
-
-Finally, To view the deployed Zksync smart contracts on the webapp; change the network to `targetNetwork: chains.zkSyncTestnet` in `scaffold.config.ts`
+Finally, change the network to `targetNetwork: chains.zkSyncTestnet` in `scaffold.config.ts`.
+This lets you view the deployed Zksync smart contracts on the webapp.
 
 #### 3.2.4. Start your NextJS app:
 
