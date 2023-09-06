@@ -136,6 +136,9 @@ const config: HardhatUserConfig = {
       apiKey: `${etherscanApiKey}`,
     },
   },
+  paths: {
+    deploy: ["deploy", "deploy-zk"],
+  },
 };
 
 export default config;

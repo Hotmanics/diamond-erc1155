@@ -24,7 +24,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   }
 
   //Deploys diamond with DiamondInit and CustomERC155 facets and calls init function on DiamondInitFacet.
-  await diamond.deploy("CustomERC1155 - Actual", {
+  await diamond.deploy("Diamond - With CustomERC1155", {
     from: owner,
     autoMine: true,
     log: true,

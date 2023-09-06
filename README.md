@@ -1,5 +1,13 @@
 # Jacob Homanics
 
+
+All commands can be done from the root directory.
+
+to test smart contracts on local hardhat node:
+```
+yarn hardhat:test
+```
+
 to compile for zksync:
 ```
 yarn compile --network zkSyncTestnet
