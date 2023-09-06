@@ -10,8 +10,7 @@ import type { ExtractAbiFunctionNames } from "abitype";
 import { Address, Log, TransactionReceipt } from "viem";
 import { Prettify } from "viem/dist/types/types/utils";
 import { UseContractEventConfig, UseContractReadConfig, UseContractWriteConfig } from "wagmi";
-import contractsData from "~~/generated/deployedContracts";
-// import contractsData from "~~/generated/zkDeployedContracts";
+import contractsData from "~~/generated/zkDeployedContracts";
 import scaffoldConfig from "~~/scaffold.config";
 
 export type GenericContractsDeclaration = {

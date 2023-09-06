@@ -1,5 +1,7 @@
 # Jacob Homanics
 
+DISCLAIMER: Using the webapp portion of this repository to interact with the ZkSync smart contracts can be buggy. I am glad to try and run you through the processes, otherwise you can use other means to interact with the smart contracts. The hardhat portion of this repository confidently can build and deploy to ZKSync Testnet.
+
 TODO:// Add references to ZkSync addresses.
 
 This project forks scaffold-eth-2 to implement a working hardhat-deploy environment and accompanying webapp where developers can build, deploy, and test Diamond smart contracts and view/interact with them on a webapp. This specific repository has an additional focus of building
