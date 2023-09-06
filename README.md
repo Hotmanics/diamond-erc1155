@@ -124,3 +124,11 @@ Grab the addresses present in your console displayed by running `yarn deployZkSy
 The deployment addresses do not automatically get updated in the eth-scaffold-2 project when dealing with ZkSync.
 
 To view the deployed Zksync smart contracts on the webapp; change the network to `targetNetwork: chains.zkSyncTestnet` in `scaffold.config.ts`
+
+#### 3.2.4. Start your NextJS app:
+
+```
+yarn start
+```
+
+Visit your app on: `http://localhost:3000`.
