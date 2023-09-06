@@ -1,6 +1,6 @@
 # Jacob Homanics
 
-This project forks scaffold-eth-2 to implement a working hardhat-deploy environment and accompanying webapp where developers can build, deploy, and test diamond smart contracts and view/interact with them on a webapp. This specific repository has an additional focus of building
+This project forks scaffold-eth-2 to implement a working hardhat-deploy environment and accompanying webapp where developers can build, deploy, and test Diamond smart contracts and view/interact with them on a webapp. This specific repository has an additional focus of building
 on ZkSync.
 
 The core smart contracts can be found within `packages/hardhat/contracts`. They work to create a Custom ERC1155 Collection following
@@ -94,7 +94,21 @@ yarn compile --network zkSyncTestnet
 
 This comands compiles your smart contracts for ZkSync and creates artifacts and caches of the smart contracts found in `packages/hardhat/artifacts-zk` and `packages/hardhat/caches-zk`
 
-#### 3.2.2 Deploy to Zksync testnet:
+#### 3.2.2 Configure .env
+
+run this command in your terminal
+```
+cp packages/hardhat/.env.example packages/hardhat/.env
+```
+
+Fill it out accordingly:
+```
+ALCHEMY_API_KEY=
+DEPLOYER_PRIVATE_KEY=
+ETHERSCAN_API_KEY=
+```
+
+#### 3.2.3 Deploy to Zksync testnet:
 First move `packages/hardhat/deploy-zk/00_deployDiamondWithCustomERC1155_zkSync.ts` to the `deploy` folder. Doing so now locks you into developing on ZkSync aside from running tests. If you want to deploy to any other network (even a local hardhat node), then you need to remove `00_deployDiamondWithCustomERC1155_zkSync.ts` from the `deploy` folder.
 
 Next, run this command in your terminal:
@@ -105,7 +119,7 @@ yarn deployZkSync --network zkSyncTestnet
 
 This command deploys your smart contracts to Zk Testnet. Traditionally, hardhat-deploy saves your deployment information in a `deployments` folder. However this is not the case when developing for ZkSync. It is a more manual process. 
 
-#### 3.2.3 Connect ZkSync deployments to webapp
+#### 3.2.4 Connect ZkSync deployments to webapp
 Grab the addresses present in your console displayed by running `yarn deployZkSync --network zkSyncTestnet` and place them into
 `~/packages/nextjs/generated/zkDeployedContracts.ts`
 The deployment addresses do not automatically get updated in the eth-scaffold-2 project when dealing with ZkSync.
