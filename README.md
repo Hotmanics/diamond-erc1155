@@ -11,7 +11,7 @@ The core smart contracts can be found within `packages/hardhat/contracts`. They 
 the ERC 2535 (Diamonds, Multi-Facet Proxy) standard and Diamond Storage pattern. The `packages/hardhat` package is a complete suite of tools to make building, deploying, and testing diamond smart contracts easy and clean.
 
 The webapp (`packages/nextjs`) is a handy tool to interact with deployed versions of these smart contracts within a clean UI and a simple UX experience.
-(@note: When dealing with ZkSync smart contracts, Some errors popup through the UI when making transactions, but these appear to be strictly visual).
+(@note: When dealing with ZkSync smart contracts, Some errors popup through the UI when making transactions, but these appear to be strictly visual. ERROR on createTokenType and mint functions: Cannot mix BigInt and other types, use explicit conversions).
 
 TODO:// Talk about how CustomERC1155 works and how it manages to meet the expectations of Game7 DAO's challenge
 
