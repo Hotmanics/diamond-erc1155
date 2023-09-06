@@ -1,7 +1,17 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import customERC1155 from "../../hardhat/artifacts-zk/contracts/CustomERC1155/CustomERC1155.sol/CustomERC1155.json";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import diamond from "../../hardhat/artifacts-zk/contracts/Diamonds/Diamond.sol/Diamond.json";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import diamondCutFacet from "../../hardhat/artifacts-zk/contracts/Diamonds/DiamondCutFacet.sol/DiamondCutFacet.json";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import diamondLoupeFacet from "../../hardhat/artifacts-zk/contracts/Diamonds/DiamondLoupeFacet.sol/DiamondLoupeFacet.json";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import diamondInit from "../../hardhat/artifacts-zk/contracts/upgradeInitializers/DiamondInit.sol/DiamondInit.json";
 
 const zk_contracts = {
