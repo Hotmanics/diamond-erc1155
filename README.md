@@ -91,6 +91,9 @@ Select the network and connect to your local webapp to interact with simnet
 
 ### 3.2 ZkSync & Testnet Development
 
+Change the network to `targetNetwork: chains.zkSyncTestnet` in `scaffold.config.ts`.
+This lets you view the deployed Zksync smart contracts on the webapp.
+
 #### 3.2.1 In your terimnal, compile using ZkSolc
 
 ```
@@ -138,13 +141,12 @@ Next, comment out this line of code in the file `~/packages/nextjs/utils/scaffol
 // import contractsData from "~~/generated/deployedContracts";
 ```
 
-Additionally, uncomment this line of code in the same file like so:
+Finally, uncomment this line of code in the same file like so:
 ```
 import contractsData from "~~/generated/zkDeployedContracts";
 ```
 
-Finally, change the network to `targetNetwork: chains.zkSyncTestnet` in `scaffold.config.ts`.
-This lets you view the deployed Zksync smart contracts on the webapp.
+
 
 #### 3.2.4. Start your NextJS app:
 
