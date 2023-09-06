@@ -130,13 +130,10 @@ yarn deployZkSync --network zkSyncTestnet
 This command deploys your smart contracts to Zk Testnet. Traditionally, hardhat-deploy saves your deployment information in a `deployments` folder. However this is not the case when developing for ZkSync. It is a more manual process. 
 
 #### 3.2.4 Connect ZkSync deployments to webapp
-First, uncomment all lines of code in the file `~/packages/nextjs/generated/zkDeployedContracts.ts`.
-
 Grab the addresses present in your console displayed from running the deploy command and (re)place them into
 `~/packages/nextjs/generated/zkDeployedContracts.ts` accordingly.
 
 The deployment addresses do not automatically get updated in the eth-scaffold-2 project when dealing with ZkSync.
-
 
 Next, comment out this line of code in the file `~/packages/nextjs/utils/scaffold-eth/contract.ts` like so:
 ```
@@ -147,8 +144,6 @@ Finally, uncomment this line of code in the same file like so:
 ```
 import contractsData from "~~/generated/zkDeployedContracts";
 ```
-
-
 
 #### 3.2.4. Start your NextJS app:
 
