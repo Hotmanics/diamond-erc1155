@@ -13,6 +13,8 @@ To satisfy the demands of the Smart Contract Development Test using ZkSync L2 do
 yarn install
 ```
 
+then 
+
 ```
 yarn hardhat:test
 ```
