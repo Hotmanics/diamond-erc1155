@@ -8,10 +8,21 @@ to test smart contracts on local hardhat node:
 yarn hardhat:test
 ```
 
-to compile for zksync:
+to compile for zksync testnet:
 ```
 yarn compile --network zkSyncTestnet
 ```
+
+to deploy to zksync testnet:
+First move `00_deployDiamondWithCustomERC1155_zkSync.ts` to the `deploy` folder.
+Then run the command: 
+```
+yarn deployZkSync --network zkSyncTestnet
+```
+The deployment addresses do not automatically get updated in the eth-scaffold-2 project when dealing with ZkSync.
+Therefore, you need to manually grab the addresses from the console, from deployment, and paste them accordingly into `~/packages/generated/zkDeployedContracts.ts`
+
+To view the deployed smart contracts on zksync change the network to `targetNetwork: chains.zkSyncTestnet` in `scaffold.config.ts`
 
 ## Requirements
 
