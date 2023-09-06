@@ -1,5 +1,10 @@
 # Jacob Homanics
 
+to compile for zksync:
+```
+yarn compile --network zkSyncTestnet
+```
+
 ## Requirements
 
 Before you begin, you need to install the following tools:
