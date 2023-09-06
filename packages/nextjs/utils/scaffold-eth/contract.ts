@@ -30,6 +30,7 @@ export type GenericContractsDeclaration = {
 
 // export const contracts = contractsData as GenericContractsDeclaration | null;
 export const contracts =
+  //@ts-ignore
   scaffoldConfig.targetNetwork.id !== chains.zkSyncTestnet.id
     ? (contractsData as GenericContractsDeclaration | null)
     : (zkContractsData as GenericContractsDeclaration | null);
