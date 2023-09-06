@@ -20,40 +20,40 @@ Before you begin, you need to install the following tools:
 ## Quickstart
 NOTE: All commands can be done from the repository's root directory.
 
-# 1. Clone this repo & install dependencies
+### 1. Clone this repo & install dependencies
 
 ```
 yarn install
 ```
 
-# 2. Run smart contract tests on local hardhat node:
+### 2. Run smart contract tests on local hardhat node:
 
 ```
 yarn hardhat:test
 ```
 
-# 3. Envrionment specific paths
+### 3. Envrionment specific paths
  There are two paths to take in this README: `3.1` and `3.2`. `3.1` follows development with your local hardhat node and most EVM compatible chains. `3.2` follows development with ZkSync and ZkSync Testnet. There are key differences in their development processes, therefore you need to interact with the project differently based on your needs.
 
-    ## 3.1. Hardhat & Most EVM Compatible Chains Development
+#### 3.1. Hardhat & Most EVM Compatible Chains Development
 
-    ### 3.1.1. Run a local network in the first terminal:
+##### 3.1.1. Run a local network in the first terminal:
 
-    ```
-    yarn chain
-    ```
+```
+yarn chain
+```
 
-    This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `hardhat.config.ts`.
+This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `hardhat.config.ts`.
 
-    3.1.2. On a second terminal, deploy the test contract:
+#### 3.1.2. On a second terminal, deploy the test contract:
 
-    ```
-    yarn deploy
-    ```
+```
+yarn deploy
+```
 
 This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script. 
 
-3.1.3. On a third terminal, start your NextJS app:
+#### 3.1.3. On a third terminal, start your NextJS app:
 
 ```
 yarn start
@@ -84,8 +84,9 @@ Then add an RPC provider to MetaMask to point to your local simnet.
 
 Select the network and connect to your local webapp to interact with simnet
 
-3.2 ZkSync & Testnet Development
-3.2.1 In your terimnal, compile using ZkSolc
+### 3.2 ZkSync & Testnet Development
+
+#### 3.2.1 In your terimnal, compile using ZkSolc
 
 ```
 yarn compile --network zkSyncTestnet
@@ -93,7 +94,7 @@ yarn compile --network zkSyncTestnet
 
 This comands compiles your smart contracts for ZkSync and creates artifacts and caches of the smart contracts found in `packages/hardhat/artifacts-zk` and `packages/hardhat/caches-zk`
 
-3.2.2 Deploy to Zksync testnet:
+#### 3.2.2 Deploy to Zksync testnet:
 First move `packages/hardhat/deploy-zk/00_deployDiamondWithCustomERC1155_zkSync.ts` to the `deploy` folder. Doing so now locks you into developing on ZkSync aside from running tests. If you want to deploy to any other network (even a local hardhat node), then you need to remove `00_deployDiamondWithCustomERC1155_zkSync.ts` from the `deploy` folder.
 
 Next, run this command in your terminal:
@@ -104,6 +105,7 @@ yarn deployZkSync --network zkSyncTestnet
 
 This command deploys your smart contracts to Zk Testnet. Traditionally, hardhat-deploy saves your deployment information in a `deployments` folder. However this is not the case when developing for ZkSync. It is a more manual process. 
 
+#### 3.2.3 Connect ZkSync deployments to webapp
 Grab the addresses present in your console displayed by running `yarn deployZkSync --network zkSyncTestnet` and place them into
 `~/packages/nextjs/generated/zkDeployedContracts.ts`
 The deployment addresses do not automatically get updated in the eth-scaffold-2 project when dealing with ZkSync.
