@@ -1,8 +1,29 @@
 # Jacob Homanics
 
-DISCLAIMER: Using the webapp portion of this repository to interact with the ZkSync smart contracts can be buggy. I am glad to try and run you through the processes, otherwise you can use other means to interact with the smart contracts. The hardhat portion of this repository confidently can build and deploy to ZKSync Testnet.
+# Smart Contract Development Test using ZkSync L2
+To satisfy the demands of Smart Contract Development Test using ZkSync L2, please refer to this section. Everything else is an added bonus :)
 
-TODO:// Add references to ZkSync addresses.
+## Commands
+
+```
+yarn install
+```
+
+```
+yarn hardhat:test
+```
+
+## ZKSync Deployments:
+
+Diamond: [0x3804798C2e9Cfaf7d0591955B042aDB316D2E764](https://goerli.explorer.zksync.io/address/0x3804798C2e9Cfaf7d0591955B042aDB316D2E764)
+DiamondCutFacet: [0xc6514Db2418dff785130731eA46993c971f96B54](https://goerli.explorer.zksync.io/address/0xc6514Db2418dff785130731eA46993c971f96B54)
+DiamondInit: [0xDEAe470139f359F569Bad53407238e61113DbfE5](https://goerli.explorer.zksync.io/address/0xDEAe470139f359F569Bad53407238e61113DbfE5)
+DiamondLoupeFacet: [0x9A62534456456cFCEC8dDdb5347cF8ffe11EC172](https://goerli.explorer.zksync.io/address/0x9A62534456456cFCEC8dDdb5347cF8ffe11EC172)
+CustomERC1155: [0x752BAc499975842BdF376E5588c059fe9f4F08FB](https://goerli.explorer.zksync.io/address/0x752BAc499975842BdF376E5588c059fe9f4F08FB)
+
+# Scaffold Eth 2
+
+DISCLAIMER: Using the webapp portion of this repository to interact with the ZkSync smart contracts can be buggy. I am glad to try and run you through the processes, otherwise you can use other means to interact with the smart contracts. The hardhat portion of this repository confidently can build and deploy to ZKSync Testnet.
 
 This project forks scaffold-eth-2 to implement a working hardhat-deploy environment and accompanying webapp where developers can build, deploy, and test Diamond smart contracts and view/interact with them on a webapp. This specific repository has an additional focus of building
 on ZkSync.
@@ -154,3 +175,6 @@ yarn start
 Visit your app on: `http://localhost:3000`.
 
 _You may see visual errors when doing transactions but these appear to be purely visible._
+
+# Considerations
+Currently this repository is deploying new instances of every Facet everytime we deploy scripts. Maybe we can build a system to see if we want to re-use existing instances since we can attach the same one to new Diamond instances since the storage exists on the Diamond.
