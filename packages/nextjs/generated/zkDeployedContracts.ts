@@ -5,7 +5,7 @@ const zk_contracts = {
       name: "zkSyncTestnet",
       contracts: {
         "Diamond - With CustomERC1155": {
-          address: "0x4B6572aCfd72F05303DAC5c7c30D61A055790D9e",
+          address: "0x3804798C2e9Cfaf7d0591955B042aDB316D2E764",
           abi: [
             {
               inputs: [],
@@ -573,7 +573,7 @@ const zk_contracts = {
           ],
         },
         Diamond: {
-          address: "0x4B6572aCfd72F05303DAC5c7c30D61A055790D9e",
+          address: "0x3804798C2e9Cfaf7d0591955B042aDB316D2E764",
           abi: [
             {
               inputs: [
@@ -602,7 +602,7 @@ const zk_contracts = {
           ],
         },
         DiamondCutFacet: {
-          address: "0x48496Adb50Cc1837261034b413023D1e7A0beAe1",
+          address: "0xc6514Db2418dff785130731eA46993c971f96B54",
           abi: [
             {
               anonymous: false,
@@ -689,7 +689,7 @@ const zk_contracts = {
           ],
         },
         DiamondInit: {
-          address: "0x0F83dA3C11d3f85dc69B3Bc9D677c42f314fd00b",
+          address: "0xDEAe470139f359F569Bad53407238e61113DbfE5",
           abi: [
             {
               inputs: [
@@ -707,7 +707,7 @@ const zk_contracts = {
           ],
         },
         DiamondLoupeFacet: {
-          address: "0x513EB711e2374f0F54dC9e474A781f6554d56796",
+          address: "0x9A62534456456cFCEC8dDdb5347cF8ffe11EC172",
           abi: [
             {
               inputs: [
@@ -807,7 +807,7 @@ const zk_contracts = {
           ],
         },
         CustomERC1155: {
-          address: "0xdDDC74DF7656B9D6b787c1918d577Fc827507623",
+          address: "0x752BAc499975842BdF376E5588c059fe9f4F08FB",
           abi: [
             {
               inputs: [],
