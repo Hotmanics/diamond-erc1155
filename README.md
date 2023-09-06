@@ -36,9 +36,9 @@ yarn hardhat:test
     3.1. Hardhat & Most EVM Compatible Chains Development
     3.1.1. Run a local network in the first terminal:
 
-```
-yarn chain
-```
+    ```
+    yarn chain
+    ```
 
 This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `hardhat.config.ts`.
 
